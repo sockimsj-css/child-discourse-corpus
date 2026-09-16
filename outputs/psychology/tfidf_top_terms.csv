@@ -1,0 +1,151 @@
+sheet,group,rank,term,tfidf_score
+tfidf_top,youth,1,media,0.19705
+tfidf_top,youth,2,climate,0.18313
+tfidf_top,youth,3,young adult,0.18275
+tfidf_top,youth,4,young adults,0.17321
+tfidf_top,youth,5,transgender,0.17113
+tfidf_top,youth,6,social media,0.16845
+tfidf_top,youth,7,online,0.15097
+tfidf_top,youth,8,digital,0.13985
+tfidf_top,youth,9,harm,0.12554
+tfidf_top,youth,10,help seeking,0.11811
+tfidf_top,youth,11,self harm,0.11811
+tfidf_top,youth,12,background,0.10965
+tfidf_top,youth,13,children young,0.10489
+tfidf_top,youth,14,identity,0.10011
+tfidf_top,youth,15,adhd,0.09694
+tfidf_top,youth,16,aces,0.09663
+tfidf_top,youth,17,sexual minority,0.09157
+tfidf_top,youth,18,covid,0.09017
+tfidf_top,youth,19,covid 19,0.09017
+tfidf_top,youth,20,loneliness,0.09017
+tfidf_top,youth,21,25,0.0874
+tfidf_top,youth,22,autistic,0.08375
+tfidf_top,youth,23,qualitative,0.08263
+tfidf_top,youth,24,minority,0.07946
+tfidf_top,youth,25,smartphone,0.07885
+tfidf_top,child/children,1,asd,0.40903
+tfidf_top,child/children,2,maltreatment,0.30675
+tfidf_top,child/children,3,aces,0.17837
+tfidf_top,child/children,4,childhood trauma,0.17556
+tfidf_top,child/children,5,adversity,0.17289
+tfidf_top,child/children,6,childhood adversity,0.17258
+tfidf_top,child/children,7,children aged,0.16329
+tfidf_top,child/children,8,trauma,0.15802
+tfidf_top,child/children,9,childhood maltreatment,0.15073
+tfidf_top,child/children,10,pandemic,0.13347
+tfidf_top,child/children,11,covid 19,0.12917
+tfidf_top,child/children,12,covid,0.12917
+tfidf_top,child/children,13,parenting,0.12828
+tfidf_top,child/children,14,children asd,0.09522
+tfidf_top,child/children,15,neglect,0.0911
+tfidf_top,child/children,16,diagnosis,0.08826
+tfidf_top,child/children,17,autism,0.0818
+tfidf_top,child/children,18,hispanic,0.0818
+tfidf_top,child/children,19,obesity,0.08039
+tfidf_top,child/children,20,surveillance,0.08034
+tfidf_top,child/children,21,health children,0.07439
+tfidf_top,child/children,22,parent child,0.0725
+tfidf_top,child/children,23,estimates,0.06693
+tfidf_top,child/children,24,learning,0.06693
+tfidf_top,child/children,25,000,0.06674
+tfidf_top,adolescent,1,sleep,0.16697
+tfidf_top,adolescent,2,emotion,0.16363
+tfidf_top,adolescent,3,bullying,0.16241
+tfidf_top,adolescent,4,media,0.15027
+tfidf_top,adolescent,5,processes,0.13023
+tfidf_top,adolescent,6,alcohol,0.12022
+tfidf_top,adolescent,7,maturation,0.11987
+tfidf_top,adolescent,8,late,0.11354
+tfidf_top,adolescent,9,adolescent depression,0.11224
+tfidf_top,adolescent,10,parent adolescent,0.1083
+tfidf_top,adolescent,11,emotion regulation,0.10686
+tfidf_top,adolescent,12,mdd,0.10379
+tfidf_top,adolescent,13,social media,0.10352
+tfidf_top,adolescent,14,depressive symptoms,0.10352
+tfidf_top,adolescent,15,perpetration,0.09476
+tfidf_top,adolescent,16,late adolescence,0.0928
+tfidf_top,adolescent,17,reward,0.0928
+tfidf_top,adolescent,18,early adolescence,0.0928
+tfidf_top,adolescent,19,ef,0.09086
+tfidf_top,adolescent,20,cognitive control,0.09086
+tfidf_top,adolescent,21,prosocial,0.08574
+tfidf_top,adolescent,22,young adulthood,0.0812
+tfidf_top,adolescent,23,insomnia,0.08017
+tfidf_top,adolescent,24,middle,0.08014
+tfidf_top,adolescent,25,pandemic,0.07734
+tfidf_top,teenage,1,teenage,0.69384
+tfidf_top,teenage,2,teenager,0.29594
+tfidf_top,teenage,3,pregnancy,0.29258
+tfidf_top,teenage,4,teenagers,0.2593
+tfidf_top,teenage,5,mothers,0.16118
+tfidf_top,teenage,6,teenage mothers,0.14582
+tfidf_top,teenage,7,driving,0.11767
+tfidf_top,teenage,8,pregnant,0.11127
+tfidf_top,teenage,9,parenting,0.06482
+tfidf_top,teenage,10,childbearing,0.0645
+tfidf_top,teenage,11,marriage,0.06392
+tfidf_top,teenage,12,women,0.06307
+tfidf_top,teenage,13,media,0.06307
+tfidf_top,teenage,14,teenage childbearing,0.05608
+tfidf_top,teenage,15,contraceptive,0.05048
+tfidf_top,teenage,16,marketing,0.04498
+tfidf_top,teenage,17,teens,0.04498
+tfidf_top,teenage,18,reproductive,0.04463
+tfidf_top,teenage,19,qualitative,0.0438
+tfidf_top,teenage,20,questionnaire,0.0438
+tfidf_top,teenage,21,feedback,0.04261
+tfidf_top,teenage,22,accepting,0.04206
+tfidf_top,teenage,23,sexuality,0.04025
+tfidf_top,teenage,24,iq,0.04025
+tfidf_top,teenage,25,mobile phone,0.03926
+tfidf_top,minor,1,minors,0.64466
+tfidf_top,minor,2,minor,0.421
+tfidf_top,minor,3,refugee,0.25823
+tfidf_top,minor,4,unaccompanied,0.24565
+tfidf_top,minor,5,ptsd,0.14735
+tfidf_top,minor,6,minor depression,0.10547
+tfidf_top,minor,7,online,0.09998
+tfidf_top,minor,8,traumatic,0.07726
+tfidf_top,minor,9,trauma,0.06135
+tfidf_top,minor,10,background,0.05226
+tfidf_top,minor,11,host,0.05092
+tfidf_top,minor,12,shame,0.05092
+tfidf_top,minor,13,guilt,0.05092
+tfidf_top,minor,14,medical,0.04999
+tfidf_top,minor,15,testing,0.04999
+tfidf_top,minor,16,cbt,0.04913
+tfidf_top,minor,17,subjects,0.04772
+tfidf_top,minor,18,migration,0.04606
+tfidf_top,minor,19,speech,0.04606
+tfidf_top,minor,20,laws,0.04606
+tfidf_top,minor,21,legal,0.04545
+tfidf_top,minor,22,questionnaire,0.04317
+tfidf_top,minor,23,workers,0.04317
+tfidf_top,minor,24,t1,0.04299
+tfidf_top,minor,25,mode,0.04299
+tfidf_top,juvenile,1,juvenile,0.73095
+tfidf_top,juvenile,2,justice,0.35369
+tfidf_top,juvenile,3,juvenile justice,0.34585
+tfidf_top,juvenile,4,offenders,0.25789
+tfidf_top,juvenile,5,trauma,0.09825
+tfidf_top,juvenile,6,delinquency,0.08646
+tfidf_top,juvenile,7,mice,0.08497
+tfidf_top,juvenile,8,juvenile delinquency,0.07548
+tfidf_top,juvenile,9,behavioral health,0.06919
+tfidf_top,juvenile,10,arrest,0.0629
+tfidf_top,juvenile,11,restraint,0.05661
+tfidf_top,juvenile,12,offending,0.05006
+tfidf_top,juvenile,13,violent,0.05006
+tfidf_top,juvenile,14,frontal,0.04779
+tfidf_top,juvenile,15,incarcerated,0.04403
+tfidf_top,juvenile,16,ptsd,0.04096
+tfidf_top,juvenile,17,sociability,0.03774
+tfidf_top,juvenile,18,lateral,0.03774
+tfidf_top,juvenile,19,gang,0.03774
+tfidf_top,juvenile,20,juvenile court,0.03774
+tfidf_top,juvenile,21,cascade,0.03774
+tfidf_top,juvenile,22,trauma informed,0.03717
+tfidf_top,juvenile,23,sports,0.03641
+tfidf_top,juvenile,24,aces,0.03186
+tfidf_top,juvenile,25,involvement juvenile,0.03186

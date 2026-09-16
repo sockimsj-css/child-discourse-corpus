@@ -1,0 +1,151 @@
+sheet,group,rank,term,tfidf_score
+tfidf_top,child/children,1,aces,0.23244
+tfidf_top,child/children,2,children rights,0.18203
+tfidf_top,child/children,3,csa,0.17974
+tfidf_top,child/children,4,child protection,0.17171
+tfidf_top,child/children,5,violence,0.16203
+tfidf_top,child/children,6,child abuse,0.1185
+tfidf_top,child/children,7,marriage,0.11482
+tfidf_top,child/children,8,maltreatment,0.11202
+tfidf_top,child/children,9,child sexual,0.11125
+tfidf_top,child/children,10,rights child,0.11125
+tfidf_top,child/children,11,child welfare,0.10784
+tfidf_top,child/children,12,crc,0.10131
+tfidf_top,child/children,13,child marriage,0.10064
+tfidf_top,child/children,14,medical,0.09915
+tfidf_top,child/children,15,education,0.09915
+tfidf_top,child/children,16,early childhood,0.08824
+tfidf_top,child/children,17,understanding,0.08706
+tfidf_top,child/children,18,trafficking,0.08706
+tfidf_top,child/children,19,convention rights,0.08706
+tfidf_top,child/children,20,decision,0.08464
+tfidf_top,child/children,21,exploitation,0.08223
+tfidf_top,child/children,22,adversity,0.08129
+tfidf_top,child/children,23,methamphetamine,0.08129
+tfidf_top,child/children,24,online,0.08121
+tfidf_top,child/children,25,childhood experiences,0.07981
+tfidf_top,youth,1,police,0.29539
+tfidf_top,youth,2,young adults,0.21772
+tfidf_top,youth,3,youth justice,0.19901
+tfidf_top,youth,4,young adult,0.15966
+tfidf_top,youth,5,children young,0.14878
+tfidf_top,youth,6,diversion,0.1306
+tfidf_top,youth,7,child welfare,0.10886
+tfidf_top,youth,8,suicide,0.10741
+tfidf_top,youth,9,recidivism,0.10473
+tfidf_top,youth,10,marijuana,0.0964
+tfidf_top,youth,11,justice systems,0.09435
+tfidf_top,youth,12,18,0.0913
+tfidf_top,youth,13,firearm,0.09018
+tfidf_top,youth,14,cigarette,0.08346
+tfidf_top,youth,15,harm,0.08056
+tfidf_top,youth,16,violence,0.08056
+tfidf_top,youth,17,perceptions,0.07788
+tfidf_top,youth,18,wales,0.0762
+tfidf_top,youth,19,delinquent,0.07519
+tfidf_top,youth,20,tobacco,0.07463
+tfidf_top,youth,21,legal cynicism,0.07307
+tfidf_top,youth,22,cynicism,0.07307
+tfidf_top,youth,23,access,0.0725
+tfidf_top,youth,24,risk youth,0.06877
+tfidf_top,youth,25,youth offenders,0.06841
+tfidf_top,adolescent,1,consent,0.27383
+tfidf_top,adolescent,2,marijuana,0.21743
+tfidf_top,adolescent,3,violence,0.15648
+tfidf_top,adolescent,4,police,0.14865
+tfidf_top,adolescent,5,access,0.14474
+tfidf_top,adolescent,6,adulthood,0.14042
+tfidf_top,adolescent,7,medical,0.12909
+tfidf_top,adolescent,8,contraception,0.12158
+tfidf_top,adolescent,9,pregnancy,0.11778
+tfidf_top,adolescent,10,abortion,0.11325
+tfidf_top,adolescent,11,ethical,0.10953
+tfidf_top,adolescent,12,confidentiality,0.10419
+tfidf_top,adolescent,13,confidential,0.10044
+tfidf_top,adolescent,14,developmental,0.09389
+tfidf_top,adolescent,15,decision,0.08997
+tfidf_top,adolescent,16,18,0.08215
+tfidf_top,adolescent,17,assault,0.08154
+tfidf_top,adolescent,18,firearm,0.08154
+tfidf_top,adolescent,19,legal socialization,0.0814
+tfidf_top,adolescent,20,sexual assault,0.07701
+tfidf_top,adolescent,21,health information,0.07513
+tfidf_top,adolescent,22,informed,0.07433
+tfidf_top,adolescent,23,socialization,0.07401
+tfidf_top,adolescent,24,rape,0.07401
+tfidf_top,adolescent,25,legitimacy,0.07248
+tfidf_top,minor,1,minors,0.67956
+tfidf_top,minor,2,trafficking,0.15754
+tfidf_top,minor,3,dmst,0.14338
+tfidf_top,minor,4,consent,0.13282
+tfidf_top,minor,5,sex trafficking,0.11866
+tfidf_top,minor,6,decision,0.10811
+tfidf_top,minor,7,unaccompanied,0.10018
+tfidf_top,minor,8,online,0.09658
+tfidf_top,minor,9,medical,0.08649
+tfidf_top,minor,10,patients,0.07722
+tfidf_top,minor,11,access,0.07722
+tfidf_top,minor,12,ends,0.07096
+tfidf_top,minor,13,minor sex,0.06922
+tfidf_top,minor,14,abortions,0.06922
+tfidf_top,minor,15,unaccompanied minors,0.06922
+tfidf_top,minor,16,understanding,0.06796
+tfidf_top,minor,17,jurisprudence,0.06796
+tfidf_top,minor,18,cigarettes,0.06261
+tfidf_top,minor,19,disciplinary,0.06261
+tfidf_top,minor,20,domestic,0.06178
+tfidf_top,minor,21,hiv,0.06081
+tfidf_top,minor,22,sextortion,0.05933
+tfidf_top,minor,23,violence,0.05869
+tfidf_top,minor,24,testing,0.05723
+tfidf_top,minor,25,tobacco,0.05723
+tfidf_top,teenage,1,teenage,0.52286
+tfidf_top,teenage,2,education,0.20417
+tfidf_top,teenage,3,pregnancy,0.15004
+tfidf_top,teenage,4,pregnant,0.13264
+tfidf_top,teenage,5,sexual harassment,0.11673
+tfidf_top,teenage,6,marriage,0.11367
+tfidf_top,teenage,7,police,0.10994
+tfidf_top,teenage,8,harassment,0.10912
+tfidf_top,teenage,9,violence,0.10601
+tfidf_top,teenage,10,teenage pregnancy,0.10055
+tfidf_top,teenage,11,emotional,0.09816
+tfidf_top,teenage,12,workers,0.08245
+tfidf_top,teenage,13,minors,0.08245
+tfidf_top,teenage,14,muslim,0.0817
+tfidf_top,teenage,15,city,0.07853
+tfidf_top,teenage,16,women,0.07853
+tfidf_top,teenage,17,perpetrators,0.07275
+tfidf_top,teenage,18,media,0.07067
+tfidf_top,teenage,19,pregnancies,0.06913
+tfidf_top,teenage,20,gambling,0.06913
+tfidf_top,teenage,21,early marriage,0.06897
+tfidf_top,teenage,22,conflict,0.06675
+tfidf_top,teenage,23,socio,0.06675
+tfidf_top,teenage,24,enforcement,0.06675
+tfidf_top,teenage,25,online gambling,0.06284
+tfidf_top,juvenile,1,juvenile offenders,0.38515
+tfidf_top,juvenile,2,recidivism,0.27321
+tfidf_top,juvenile,3,juvenile delinquency,0.21382
+tfidf_top,juvenile,4,behavioral health,0.14447
+tfidf_top,juvenile,5,juvenile court,0.11879
+tfidf_top,juvenile,6,subgroups,0.11879
+tfidf_top,juvenile,7,decision,0.10691
+tfidf_top,juvenile,8,adjudication,0.09631
+tfidf_top,juvenile,9,health problems,0.09629
+tfidf_top,juvenile,10,jj,0.09506
+tfidf_top,juvenile,11,delinquency prevention,0.09506
+tfidf_top,juvenile,12,probation,0.09503
+tfidf_top,juvenile,13,race,0.09503
+tfidf_top,juvenile,14,trauma informed,0.08315
+tfidf_top,juvenile,15,informed,0.08315
+tfidf_top,juvenile,16,strategy,0.08253
+tfidf_top,juvenile,17,health disorders,0.08253
+tfidf_top,juvenile,18,secure,0.08253
+tfidf_top,juvenile,19,parental involvement,0.08026
+tfidf_top,juvenile,20,multidimensional,0.07605
+tfidf_top,juvenile,21,ptsd,0.07605
+tfidf_top,juvenile,22,juvenile probation,0.07605
+tfidf_top,juvenile,23,female juvenile,0.07605
+tfidf_top,juvenile,24,delinquent,0.07127
+tfidf_top,juvenile,25,decision making,0.07127

@@ -1,0 +1,22 @@
+{
+  "field": "Law",
+  "max_per_term": 200,
+  "search_terms": [
+    "child",
+    "children",
+    "childhood",
+    "youth",
+    "young people",
+    "adolescent",
+    "adolescence",
+    "juvenile",
+    "minor",
+    "minors",
+    "teenage",
+    "teenager",
+    "young adult"
+  ],
+  "total_collected": 824,
+  "collection_date": "2026-09-16T14:29:38.296872",
+  "api_key_used": true
+}

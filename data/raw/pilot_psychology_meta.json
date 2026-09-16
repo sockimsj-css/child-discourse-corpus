@@ -1,0 +1,22 @@
+{
+  "field": "Psychology",
+  "max_per_term": 200,
+  "search_terms": [
+    "child",
+    "children",
+    "childhood",
+    "youth",
+    "young people",
+    "adolescent",
+    "adolescence",
+    "juvenile",
+    "minor",
+    "minors",
+    "teenage",
+    "teenager",
+    "young adult"
+  ],
+  "total_collected": 948,
+  "collection_date": "2026-09-16T15:01:30.188601",
+  "api_key_used": true
+}

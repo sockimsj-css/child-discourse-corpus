@@ -1,0 +1,121 @@
+sheet,group,rank,term,this_group,others_avg,diff
+distinctive,child/children,1,aces,0.23244,0.01312,0.21931
+distinctive,child/children,2,csa,0.17974,0.00524,0.1745
+distinctive,child/children,3,children rights,0.18203,0.00871,0.17332
+distinctive,child/children,4,child protection,0.17171,0.01433,0.15738
+distinctive,child/children,5,child abuse,0.1185,0.00724,0.11126
+distinctive,child/children,6,rights child,0.11125,0.01093,0.10032
+distinctive,child/children,7,child marriage,0.10064,0.00126,0.09938
+distinctive,child/children,8,crc,0.10131,0.00212,0.09919
+distinctive,child/children,9,child sexual,0.11125,0.01251,0.09874
+distinctive,child/children,10,maltreatment,0.11202,0.01845,0.09356
+distinctive,child/children,11,child welfare,0.10784,0.02428,0.08357
+distinctive,child/children,12,early childhood,0.08824,0.00638,0.08185
+distinctive,child/children,13,violence,0.16203,0.08035,0.08168
+distinctive,child/children,14,methamphetamine,0.08129,0.00086,0.08043
+distinctive,child/children,15,adversity,0.08129,0.00258,0.07871
+distinctive,child/children,16,convention rights,0.08706,0.00838,0.07868
+distinctive,child/children,17,marriage,0.11482,0.03785,0.07697
+distinctive,child/children,18,childhood experiences,0.07981,0.00502,0.07479
+distinctive,child/children,19,poverty,0.0719,0.00379,0.0681
+distinctive,child/children,20,csec,0.06967,0.00297,0.06671
+distinctive,youth,1,police,0.29539,0.06432,0.23107
+distinctive,youth,2,young adults,0.21772,0.00386,0.21386
+distinctive,youth,3,youth justice,0.19901,0.01596,0.18305
+distinctive,youth,4,young adult,0.15966,0.00171,0.15795
+distinctive,youth,5,children young,0.14878,0.00821,0.14057
+distinctive,youth,6,diversion,0.1306,0.00587,0.12473
+distinctive,youth,7,suicide,0.10741,0.01671,0.0907
+distinctive,youth,8,child welfare,0.10886,0.02407,0.08479
+distinctive,youth,9,justice systems,0.09435,0.01047,0.08388
+distinctive,youth,10,cigarette,0.08346,0.00651,0.07695
+distinctive,youth,11,wales,0.0762,0.00408,0.07212
+distinctive,youth,12,risk youth,0.06877,0.00125,0.06752
+distinctive,youth,13,perceptions,0.07788,0.01079,0.06709
+distinctive,youth,14,legal cynicism,0.07307,0.00751,0.06555
+distinctive,youth,15,cynicism,0.07307,0.00751,0.06555
+distinctive,youth,16,youth offenders,0.06841,0.00478,0.06363
+distinctive,youth,17,firearm,0.09018,0.02898,0.0612
+distinctive,youth,18,youth youth,0.06017,0.00077,0.0594
+distinctive,youth,19,harm,0.08056,0.02234,0.05822
+distinctive,youth,20,eviction,0.06017,0.00387,0.0563
+distinctive,adolescent,1,consent,0.27383,0.04718,0.22666
+distinctive,adolescent,2,marijuana,0.21743,0.02187,0.19556
+distinctive,adolescent,3,contraception,0.12158,0.00485,0.11673
+distinctive,adolescent,4,adulthood,0.14042,0.0287,0.11173
+distinctive,adolescent,5,confidentiality,0.10419,0.0081,0.09608
+distinctive,adolescent,6,confidential,0.10044,0.00524,0.0952
+distinctive,adolescent,7,abortion,0.11325,0.02081,0.09244
+distinctive,adolescent,8,access,0.14474,0.05303,0.09171
+distinctive,adolescent,9,ethical,0.10953,0.02148,0.08805
+distinctive,adolescent,10,pregnancy,0.11778,0.03184,0.08593
+distinctive,adolescent,11,medical,0.12909,0.05043,0.07866
+distinctive,adolescent,12,legal socialization,0.0814,0.00344,0.07796
+distinctive,adolescent,13,violence,0.15648,0.08146,0.07502
+distinctive,adolescent,14,health information,0.07513,0.00297,0.07217
+distinctive,adolescent,15,assault,0.08154,0.01007,0.07147
+distinctive,adolescent,16,developmental,0.09389,0.02402,0.06987
+distinctive,adolescent,17,sexual assault,0.07701,0.00764,0.06937
+distinctive,adolescent,18,adolescent health,0.06887,0.00077,0.0681
+distinctive,adolescent,19,adolescent offenders,0.06887,0.00086,0.06801
+distinctive,adolescent,20,legitimacy,0.07248,0.00514,0.06734
+distinctive,minor,1,minors,0.67956,0.0298,0.64977
+distinctive,minor,2,dmst,0.14338,0.00232,0.14105
+distinctive,minor,3,trafficking,0.15754,0.02906,0.12847
+distinctive,minor,4,sex trafficking,0.11866,0.00387,0.11479
+distinctive,minor,5,unaccompanied,0.10018,0.00399,0.09618
+distinctive,minor,6,minor sex,0.06922,0.00077,0.06844
+distinctive,minor,7,abortions,0.06922,0.00125,0.06796
+distinctive,minor,8,unaccompanied minors,0.06922,0.00155,0.06767
+distinctive,minor,9,ends,0.07096,0.00341,0.06755
+distinctive,minor,10,online,0.09658,0.03213,0.06445
+distinctive,minor,11,patients,0.07722,0.01823,0.05899
+distinctive,minor,12,disciplinary,0.06261,0.00399,0.05862
+distinctive,minor,13,sextortion,0.05933,0.00077,0.05855
+distinctive,minor,14,cigarettes,0.06261,0.00429,0.05832
+distinctive,minor,15,consent,0.13282,0.07538,0.05745
+distinctive,minor,16,jurisprudence,0.06796,0.01077,0.05718
+distinctive,minor,17,hiv,0.06081,0.00979,0.05101
+distinctive,minor,18,testing,0.05723,0.00705,0.05018
+distinctive,minor,19,domestic minor,0.04592,0.00138,0.04454
+distinctive,minor,20,contracts,0.04944,0.00503,0.04441
+distinctive,teenage,1,teenage,0.52286,0.00903,0.51384
+distinctive,teenage,2,education,0.20417,0.04498,0.15919
+distinctive,teenage,3,pregnant,0.13264,0.00568,0.12697
+distinctive,teenage,4,pregnancy,0.15004,0.02539,0.12465
+distinctive,teenage,5,sexual harassment,0.11673,0.00356,0.11317
+distinctive,teenage,6,harassment,0.10912,0.00367,0.10545
+distinctive,teenage,7,teenage pregnancy,0.10055,0.00125,0.0993
+distinctive,teenage,8,muslim,0.0817,0.00086,0.08084
+distinctive,teenage,9,marriage,0.11367,0.03808,0.07558
+distinctive,teenage,10,city,0.07853,0.00641,0.07212
+distinctive,teenage,11,emotional,0.09816,0.02613,0.07203
+distinctive,teenage,12,workers,0.08245,0.01457,0.06788
+distinctive,teenage,13,gambling,0.06913,0.00396,0.06517
+distinctive,teenage,14,perpetrators,0.07275,0.00843,0.06432
+distinctive,teenage,15,pregnancies,0.06913,0.00626,0.06287
+distinctive,teenage,16,early marriage,0.06897,0.00659,0.06238
+distinctive,teenage,17,teenage pregnancies,0.06284,0.00125,0.06159
+distinctive,teenage,18,online gambling,0.06284,0.00297,0.05988
+distinctive,teenage,19,creative,0.05836,0.00149,0.05687
+distinctive,teenage,20,teachers,0.05836,0.00298,0.05539
+distinctive,juvenile,1,juvenile offenders,0.38515,0.00513,0.38002
+distinctive,juvenile,2,recidivism,0.27321,0.0369,0.23631
+distinctive,juvenile,3,juvenile delinquency,0.21382,0.00733,0.20648
+distinctive,juvenile,4,behavioral health,0.14447,0.00552,0.13895
+distinctive,juvenile,5,juvenile court,0.11879,0.0091,0.10969
+distinctive,juvenile,6,subgroups,0.11879,0.0101,0.10869
+distinctive,juvenile,7,adjudication,0.09631,0.00211,0.09421
+distinctive,juvenile,8,delinquency prevention,0.09506,0.00086,0.0942
+distinctive,juvenile,9,jj,0.09506,0.00172,0.09335
+distinctive,juvenile,10,health problems,0.09629,0.01546,0.08083
+distinctive,juvenile,11,health disorders,0.08253,0.00314,0.07939
+distinctive,juvenile,12,race,0.09503,0.01879,0.07624
+distinctive,juvenile,13,female juvenile,0.07605,0.00086,0.07519
+distinctive,juvenile,14,juvenile probation,0.07605,0.00086,0.07519
+distinctive,juvenile,15,multidimensional,0.07605,0.00125,0.0748
+distinctive,juvenile,16,secure,0.08253,0.00785,0.07469
+distinctive,juvenile,17,ptsd,0.07605,0.0031,0.07296
+distinctive,juvenile,18,strategy,0.08253,0.00996,0.07257
+distinctive,juvenile,19,probation,0.09503,0.02259,0.07244
+distinctive,juvenile,20,trauma informed,0.08315,0.01611,0.06704
