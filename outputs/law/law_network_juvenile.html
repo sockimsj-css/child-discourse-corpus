@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1>Co-occurrence: LAW / "juvenile" (35 papers)</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1>Co-occurrence: LAW / "juvenile" (35 papers)</h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#7B68EE", "font": {"color": "#333333"}, "id": "justice", "label": "justice", "shape": "dot", "size": 60.0, "title": "justice\nfreq: 89\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "system", "label": "system", "shape": "dot", "size": 32.47191011235955, "title": "system\nfreq: 40\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "health", "label": "health", "shape": "dot", "size": 30.224719101123593, "title": "health\nfreq: 36\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "with", "label": "with", "shape": "dot", "size": 51.01123595505618, "title": "with\nfreq: 73\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "mental", "label": "mental", "shape": "dot", "size": 24.60674157303371, "title": "mental\nfreq: 26\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "involvement", "label": "involvement", "shape": "dot", "size": 19.550561797752806, "title": "involvement\nfreq: 17\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "delinquency", "label": "delinquency", "shape": "dot", "size": 25.168539325842698, "title": "delinquency\nfreq: 27\ncommunity: 0"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "offenders", "label": "offenders", "shape": "dot", "size": 29.662921348314608, "title": "offenders\nfreq: 35\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "recidivism", "label": "recidivism", "shape": "dot", "size": 22.921348314606742, "title": "recidivism\nfreq: 23\ncommunity: 6"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "family", "label": "family", "shape": "dot", "size": 20.674157303370784, "title": "family\nfreq: 19\ncommunity: 3"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "school", "label": "school", "shape": "dot", "size": 20.1123595505618, "title": "school\nfreq: 18\ncommunity: 3"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "juveniles", "label": "juveniles", "shape": "dot", "size": 24.60674157303371, "title": "juveniles\nfreq: 26\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "services", "label": "services", "shape": "dot", "size": 16.741573033707866, "title": "services\nfreq: 12\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "problems", "label": "problems", "shape": "dot", "size": 22.921348314606742, "title": "problems\nfreq: 23\ncommunity: 1"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "violent", "label": "violent", "shape": "dot", "size": 18.98876404494382, "title": "violent\nfreq: 16\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "serious", "label": "serious", "shape": "dot", "size": 17.865168539325843, "title": "serious\nfreq: 14\ncommunity: 6"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "informed", "label": "informed", "shape": "dot", "size": 13.932584269662922, "title": "informed\nfreq: 7\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "trauma", "label": "trauma", "shape": "dot", "size": 20.674157303370784, "title": "trauma\nfreq: 19\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "behavioral", "label": "behavioral", "shape": "dot", "size": 15.617977528089888, "title": "behavioral\nfreq: 10\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "disorders", "label": "disorders", "shape": "dot", "size": 15.617977528089888, "title": "disorders\nfreq: 10\ncommunity: 0"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "dropout", "label": "dropout", "shape": "dot", "size": 13.932584269662922, "title": "dropout\nfreq: 7\ncommunity: 3"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "practices", "label": "practices", "shape": "dot", "size": 13.932584269662922, "title": "practices\nfreq: 7\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "treatment", "label": "treatment", "shape": "dot", "size": 19.550561797752806, "title": "treatment\nfreq: 17\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "decision", "label": "decision", "shape": "dot", "size": 15.0561797752809, "title": "decision\nfreq: 9\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "making", "label": "making", "shape": "dot", "size": 13.370786516853933, "title": "making\nfreq: 6\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "models", "label": "models", "shape": "dot", "size": 13.932584269662922, "title": "models\nfreq: 7\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "contact", "label": "contact", "shape": "dot", "size": 14.49438202247191, "title": "contact\nfreq: 8\ncommunity: 1"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "risk", "label": "risk", "shape": "dot", "size": 22.921348314606742, "title": "risk\nfreq: 23\ncommunity: 6"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "parental", "label": "parental", "shape": "dot", "size": 16.179775280898877, "title": "parental\nfreq: 11\ncommunity: 3"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "abuse", "label": "abuse", "shape": "dot", "size": 16.741573033707866, "title": "abuse\nfreq: 12\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "male", "label": "male", "shape": "dot", "size": 13.370786516853933, "title": "male\nfreq: 6\ncommunity: 6"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "individual", "label": "individual", "shape": "dot", "size": 14.49438202247191, "title": "individual\nfreq: 8\ncommunity: 3"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "criminal", "label": "criminal", "shape": "dot", "size": 17.865168539325843, "title": "criminal\nfreq: 14\ncommunity: 7"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "combined", "label": "combined", "shape": "dot", "size": 13.370786516853933, "title": "combined\nfreq: 6\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "systems", "label": "systems", "shape": "dot", "size": 13.932584269662922, "title": "systems\nfreq: 7\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "care", "label": "care", "shape": "dot", "size": 15.617977528089888, "title": "care\nfreq: 10\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "identify", "label": "identify", "shape": "dot", "size": 15.0561797752809, "title": "identify\nfreq: 9\ncommunity: 0"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "policies", "label": "policies", "shape": "dot", "size": 14.49438202247191, "title": "policies\nfreq: 8\ncommunity: 4"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "interventions", "label": "interventions", "shape": "dot", "size": 16.179775280898877, "title": "interventions\nfreq: 11\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "involved", "label": "involved", "shape": "dot", "size": 15.0561797752809, "title": "involved\nfreq: 9\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "jjs", "label": "jjs", "shape": "dot", "size": 13.370786516853933, "title": "jjs\nfreq: 6\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "court", "label": "court", "shape": "dot", "size": 20.1123595505618, "title": "court\nfreq: 18\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "prior", "label": "prior", "shape": "dot", "size": 14.49438202247191, "title": "prior\nfreq: 8\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "complex", "label": "complex", "shape": "dot", "size": 14.49438202247191, "title": "complex\nfreq: 8\ncommunity: 4"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "program", "label": "program", "shape": "dot", "size": 14.49438202247191, "title": "program\nfreq: 8\ncommunity: 6"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "control", "label": "control", "shape": "dot", "size": 13.370786516853933, "title": "control\nfreq: 6\ncommunity: 5"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "delinquent", "label": "delinquent", "shape": "dot", "size": 13.370786516853933, "title": "delinquent\nfreq: 6\ncommunity: 5"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "intervention", "label": "intervention", "shape": "dot", "size": 14.49438202247191, "title": "intervention\nfreq: 8\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "programs", "label": "programs", "shape": "dot", "size": 13.370786516853933, "title": "programs\nfreq: 6\ncommunity: 6"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "core", "label": "core", "shape": "dot", "size": 14.49438202247191, "title": "core\nfreq: 8\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "practice", "label": "practice", "shape": "dot", "size": 16.179775280898877, "title": "practice\nfreq: 11\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "while", "label": "while", "shape": "dot", "size": 14.49438202247191, "title": "while\nfreq: 8\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "case", "label": "case", "shape": "dot", "size": 13.370786516853933, "title": "case\nfreq: 6\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "known", "label": "known", "shape": "dot", "size": 13.370786516853933, "title": "known\nfreq: 6\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "referred", "label": "referred", "shape": "dot", "size": 13.370786516853933, "title": "referred\nfreq: 6\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "adolescents", "label": "adolescents", "shape": "dot", "size": 13.932584269662922, "title": "adolescents\nfreq: 7\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "law", "label": "law", "shape": "dot", "size": 13.370786516853933, "title": "law\nfreq: 6\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "act", "label": "act", "shape": "dot", "size": 13.932584269662922, "title": "act\nfreq: 7\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "social", "label": "social", "shape": "dot", "size": 15.617977528089888, "title": "social\nfreq: 10\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "crimes", "label": "crimes", "shape": "dot", "size": 14.49438202247191, "title": "crimes\nfreq: 8\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "assessment", "label": "assessment", "shape": "dot", "size": 13.370786516853933, "title": "assessment\nfreq: 6\ncommunity: 1"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "history", "label": "history", "shape": "dot", "size": 14.49438202247191, "title": "history\nfreq: 8\ncommunity: 7"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "incarceration", "label": "incarceration", "shape": "dot", "size": 13.370786516853933, "title": "incarceration\nfreq: 6\ncommunity: 7"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "adjudications", "label": "adjudications", "shape": "dot", "size": 13.370786516853933, "title": "adjudications\nfreq: 6\ncommunity: 7"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "evidence", "label": "evidence", "shape": "dot", "size": 13.932584269662922, "title": "evidence\nfreq: 7\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "girls", "label": "girls", "shape": "dot", "size": 14.49438202247191, "title": "girls\nfreq: 8\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "strategy", "label": "strategy", "shape": "dot", "size": 13.370786516853933, "title": "strategy\nfreq: 6\ncommunity: 0"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "crime", "label": "crime", "shape": "dot", "size": 17.865168539325843, "title": "crime\nfreq: 14\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "behavior", "label": "behavior", "shape": "dot", "size": 13.370786516853933, "title": "behavior\nfreq: 6\ncommunity: 6"}]);
+                  edges = new vis.DataSet([{"from": "justice", "title": "co-occurrence: 35", "to": "system", "value": 35}, {"from": "justice", "title": "co-occurrence: 19", "to": "with", "value": 19}, {"from": "justice", "title": "co-occurrence: 15", "to": "health", "value": 15}, {"from": "justice", "title": "co-occurrence: 11", "to": "mental", "value": 11}, {"from": "justice", "title": "co-occurrence: 11", "to": "involvement", "value": 11}, {"from": "justice", "title": "co-occurrence: 10", "to": "delinquency", "value": 10}, {"from": "justice", "title": "co-occurrence: 9", "to": "juveniles", "value": 9}, {"from": "justice", "title": "co-occurrence: 9", "to": "services", "value": 9}, {"from": "justice", "title": "co-occurrence: 7", "to": "trauma", "value": 7}, {"from": "justice", "title": "co-occurrence: 7", "to": "disorders", "value": 7}, {"from": "justice", "title": "co-occurrence: 6", "to": "offenders", "value": 6}, {"from": "justice", "title": "co-occurrence: 6", "to": "informed", "value": 6}, {"from": "justice", "title": "co-occurrence: 6", "to": "practices", "value": 6}, {"from": "justice", "title": "co-occurrence: 6", "to": "problems", "value": 6}, {"from": "justice", "title": "co-occurrence: 6", "to": "models", "value": 6}, {"from": "justice", "title": "co-occurrence: 5", "to": "criminal", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "systems", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "care", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "identify", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "interventions", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "policies", "value": 5}, {"from": "justice", "title": "co-occurrence: 5", "to": "involved", "value": 5}, {"from": "justice", "title": "co-occurrence: 4", "to": "practice", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "decision", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "making", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "known", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "referred", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "adolescents", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "risk", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "contact", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "treatment", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "behavioral", "value": 4}, {"from": "justice", "title": "co-occurrence: 4", "to": "girls", "value": 4}, {"from": "justice", "title": "co-occurrence: 3", "to": "court", "value": 3}, {"from": "justice", "title": "co-occurrence: 3", "to": "core", "value": 3}, {"from": "system", "title": "co-occurrence: 8", "to": "health", "value": 8}, {"from": "system", "title": "co-occurrence: 7", "to": "mental", "value": 7}, {"from": "system", "title": "co-occurrence: 7", "to": "with", "value": 7}, {"from": "system", "title": "co-occurrence: 6", "to": "juveniles", "value": 6}, {"from": "system", "title": "co-occurrence: 5", "to": "services", "value": 5}, {"from": "system", "title": "co-occurrence: 4", "to": "criminal", "value": 4}, {"from": "system", "title": "co-occurrence: 4", "to": "care", "value": 4}, {"from": "system", "title": "co-occurrence: 4", "to": "delinquency", "value": 4}, {"from": "system", "title": "co-occurrence: 4", "to": "disorders", "value": 4}, {"from": "system", "title": "co-occurrence: 4", "to": "involvement", "value": 4}, {"from": "health", "title": "co-occurrence: 20", "to": "with", "value": 20}, {"from": "health", "title": "co-occurrence: 20", "to": "mental", "value": 20}, {"from": "health", "title": "co-occurrence: 9", "to": "problems", "value": 9}, {"from": "health", "title": "co-occurrence: 8", "to": "juveniles", "value": 8}, {"from": "health", "title": "co-occurrence: 7", "to": "behavioral", "value": 7}, {"from": "health", "title": "co-occurrence: 6", "to": "services", "value": 6}, {"from": "health", "title": "co-occurrence: 6", "to": "disorders", "value": 6}, {"from": "health", "title": "co-occurrence: 6", "to": "involvement", "value": 6}, {"from": "health", "title": "co-occurrence: 5", "to": "involved", "value": 5}, {"from": "health", "title": "co-occurrence: 5", "to": "care", "value": 5}, {"from": "health", "title": "co-occurrence: 4", "to": "jjs", "value": 4}, {"from": "with", "title": "co-occurrence: 13", "to": "mental", "value": 13}, {"from": "with", "title": "co-occurrence: 9", "to": "recidivism", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "juveniles", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "problems", "value": 9}, {"from": "with", "title": "co-occurrence: 8", "to": "offenders", "value": 8}, {"from": "with", "title": "co-occurrence: 7", "to": "involvement", "value": 7}, {"from": "with", "title": "co-occurrence: 6", "to": "treatment", "value": 6}, {"from": "with", "title": "co-occurrence: 6", "to": "contact", "value": 6}, {"from": "with", "title": "co-occurrence: 5", "to": "combined", "value": 5}, {"from": "with", "title": "co-occurrence: 5", "to": "trauma", "value": 5}, {"from": "with", "title": "co-occurrence: 5", "to": "involved", "value": 5}, {"from": "with", "title": "co-occurrence: 5", "to": "behavioral", "value": 5}, {"from": "with", "title": "co-occurrence: 5", "to": "services", "value": 5}, {"from": "with", "title": "co-occurrence: 4", "to": "violent", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "intervention", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "while", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "complex", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "jjs", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "family", "value": 4}, {"from": "with", "title": "co-occurrence: 4", "to": "assessment", "value": 4}, {"from": "with", "title": "co-occurrence: 3", "to": "delinquency", "value": 3}, {"from": "with", "title": "co-occurrence: 3", "to": "programs", "value": 3}, {"from": "mental", "title": "co-occurrence: 8", "to": "problems", "value": 8}, {"from": "mental", "title": "co-occurrence: 6", "to": "juveniles", "value": 6}, {"from": "mental", "title": "co-occurrence: 6", "to": "involvement", "value": 6}, {"from": "mental", "title": "co-occurrence: 5", "to": "care", "value": 5}, {"from": "mental", "title": "co-occurrence: 5", "to": "disorders", "value": 5}, {"from": "mental", "title": "co-occurrence: 4", "to": "involved", "value": 4}, {"from": "mental", "title": "co-occurrence: 4", "to": "jjs", "value": 4}, {"from": "mental", "title": "co-occurrence: 4", "to": "contact", "value": 4}, {"from": "mental", "title": "co-occurrence: 4", "to": "services", "value": 4}, {"from": "involvement", "title": "co-occurrence: 5", "to": "services", "value": 5}, {"from": "involvement", "title": "co-occurrence: 5", "to": "parental", "value": 5}, {"from": "involvement", "title": "co-occurrence: 4", "to": "disorders", "value": 4}, {"from": "delinquency", "title": "co-occurrence: 4", "to": "serious", "value": 4}, {"from": "delinquency", "title": "co-occurrence: 3", "to": "strategy", "value": 3}, {"from": "delinquency", "title": "co-occurrence: 3", "to": "crime", "value": 3}, {"from": "offenders", "title": "co-occurrence: 10", "to": "recidivism", "value": 10}, {"from": "offenders", "title": "co-occurrence: 8", "to": "violent", "value": 8}, {"from": "offenders", "title": "co-occurrence: 7", "to": "serious", "value": 7}, {"from": "offenders", "title": "co-occurrence: 6", "to": "risk", "value": 6}, {"from": "offenders", "title": "co-occurrence: 6", "to": "abuse", "value": 6}, {"from": "offenders", "title": "co-occurrence: 6", "to": "male", "value": 6}, {"from": "offenders", "title": "co-occurrence: 4", "to": "program", "value": 4}, {"from": "offenders", "title": "co-occurrence: 3", "to": "crime", "value": 3}, {"from": "offenders", "title": "co-occurrence: 3", "to": "behavior", "value": 3}, {"from": "offenders", "title": "co-occurrence: 3", "to": "identify", "value": 3}, {"from": "offenders", "title": "co-occurrence: 3", "to": "criminal", "value": 3}, {"from": "offenders", "title": "co-occurrence: 3", "to": "treatment", "value": 3}, {"from": "recidivism", "title": "co-occurrence: 6", "to": "violent", "value": 6}, {"from": "recidivism", "title": "co-occurrence: 5", "to": "abuse", "value": 5}, {"from": "recidivism", "title": "co-occurrence: 5", "to": "risk", "value": 5}, {"from": "recidivism", "title": "co-occurrence: 4", "to": "intervention", "value": 4}, {"from": "recidivism", "title": "co-occurrence: 4", "to": "male", "value": 4}, {"from": "recidivism", "title": "co-occurrence: 3", "to": "programs", "value": 3}, {"from": "family", "title": "co-occurrence: 9", "to": "school", "value": 9}, {"from": "family", "title": "co-occurrence: 6", "to": "parental", "value": 6}, {"from": "family", "title": "co-occurrence: 5", "to": "problems", "value": 5}, {"from": "family", "title": "co-occurrence: 4", "to": "individual", "value": 4}, {"from": "family", "title": "co-occurrence: 4", "to": "dropout", "value": 4}, {"from": "school", "title": "co-occurrence: 7", "to": "dropout", "value": 7}, {"from": "school", "title": "co-occurrence: 5", "to": "individual", "value": 5}, {"from": "juveniles", "title": "co-occurrence: 5", "to": "jjs", "value": 5}, {"from": "juveniles", "title": "co-occurrence: 5", "to": "contact", "value": 5}, {"from": "juveniles", "title": "co-occurrence: 4", "to": "involved", "value": 4}, {"from": "juveniles", "title": "co-occurrence: 4", "to": "law", "value": 4}, {"from": "juveniles", "title": "co-occurrence: 4", "to": "act", "value": 4}, {"from": "juveniles", "title": "co-occurrence: 4", "to": "social", "value": 4}, {"from": "juveniles", "title": "co-occurrence: 4", "to": "crimes", "value": 4}, {"from": "problems", "title": "co-occurrence: 4", "to": "treatment", "value": 4}, {"from": "problems", "title": "co-occurrence: 4", "to": "trauma", "value": 4}, {"from": "violent", "title": "co-occurrence: 4", "to": "serious", "value": 4}, {"from": "violent", "title": "co-occurrence: 4", "to": "abuse", "value": 4}, {"from": "violent", "title": "co-occurrence: 3", "to": "crime", "value": 3}, {"from": "informed", "title": "co-occurrence: 7", "to": "trauma", "value": 7}, {"from": "informed", "title": "co-occurrence: 5", "to": "policies", "value": 5}, {"from": "informed", "title": "co-occurrence: 4", "to": "core", "value": 4}, {"from": "trauma", "title": "co-occurrence: 5", "to": "policies", "value": 5}, {"from": "trauma", "title": "co-occurrence: 5", "to": "complex", "value": 5}, {"from": "trauma", "title": "co-occurrence: 4", "to": "core", "value": 4}, {"from": "treatment", "title": "co-occurrence: 4", "to": "assessment", "value": 4}, {"from": "decision", "title": "co-occurrence: 6", "to": "making", "value": 6}, {"from": "abuse", "title": "co-occurrence: 4", "to": "male", "value": 4}, {"from": "criminal", "title": "co-occurrence: 4", "to": "history", "value": 4}, {"from": "criminal", "title": "co-occurrence: 4", "to": "incarceration", "value": 4}, {"from": "policies", "title": "co-occurrence: 4", "to": "core", "value": 4}, {"from": "policies", "title": "co-occurrence: 4", "to": "practice", "value": 4}, {"from": "court", "title": "co-occurrence: 5", "to": "prior", "value": 5}, {"from": "court", "title": "co-occurrence: 4", "to": "case", "value": 4}, {"from": "control", "title": "co-occurrence: 4", "to": "delinquent", "value": 4}, {"from": "intervention", "title": "co-occurrence: 4", "to": "programs", "value": 4}, {"from": "history", "title": "co-occurrence: 4", "to": "incarceration", "value": 4}, {"from": "incarceration", "title": "co-occurrence: 4", "to": "adjudications", "value": 4}, {"from": "evidence", "title": "co-occurrence: 4", "to": "girls", "value": 4}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -5000,
+            "springConstant": 0.001,
+            "springLength": 150
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

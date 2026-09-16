@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1>Co-occurrence: LAW / "child/children" (229 papers)</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1>Co-occurrence: LAW / "child/children" (229 papers)</h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#7B68EE", "font": {"color": "#333333"}, "id": "abuse", "label": "abuse", "shape": "dot", "size": 38.515625, "title": "abuse\nfreq: 219\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "sexual", "label": "sexual", "shape": "dot", "size": 26.40625, "title": "sexual\nfreq: 126\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "convention", "label": "convention", "shape": "dot", "size": 16.901041666666668, "title": "convention\nfreq: 53\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "rights", "label": "rights", "shape": "dot", "size": 41.11979166666667, "title": "rights\nfreq: 239\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "human", "label": "human", "shape": "dot", "size": 18.59375, "title": "human\nfreq: 66\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "with", "label": "with", "shape": "dot", "size": 60.0, "title": "with\nfreq: 384\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "cases", "label": "cases", "shape": "dot", "size": 20.286458333333332, "title": "cases\nfreq: 79\ncommunity: 0"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "health", "label": "health", "shape": "dot", "size": 26.927083333333336, "title": "health\nfreq: 130\ncommunity: 3"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "mental", "label": "mental", "shape": "dot", "size": 14.947916666666666, "title": "mental\nfreq: 38\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "adverse", "label": "adverse", "shape": "dot", "size": 15.338541666666666, "title": "adverse\nfreq: 41\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "experiences", "label": "experiences", "shape": "dot", "size": 17.8125, "title": "experiences\nfreq: 60\ncommunity: 4"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "decision", "label": "decision", "shape": "dot", "size": 14.557291666666666, "title": "decision\nfreq: 35\ncommunity: 5"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "making", "label": "making", "shape": "dot", "size": 14.6875, "title": "making\nfreq: 36\ncommunity: 5"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "public", "label": "public", "shape": "dot", "size": 16.25, "title": "public\nfreq: 48\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "justice", "label": "justice", "shape": "dot", "size": 19.505208333333332, "title": "justice\nfreq: 73\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "system", "label": "system", "shape": "dot", "size": 20.286458333333332, "title": "system\nfreq: 79\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "aces", "label": "aces", "shape": "dot", "size": 20.807291666666668, "title": "aces\nfreq: 83\ncommunity: 4"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "risk", "label": "risk", "shape": "dot", "size": 21.71875, "title": "risk\nfreq: 90\ncommunity: 0"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "protection", "label": "protection", "shape": "dot", "size": 25.104166666666664, "title": "protection\nfreq: 116\ncommunity: 5"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "involved", "label": "involved", "shape": "dot", "size": 14.817708333333334, "title": "involved\nfreq: 37\ncommunity: 4"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "social", "label": "social", "shape": "dot", "size": 21.588541666666668, "title": "social\nfreq: 89\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "crc", "label": "crc", "shape": "dot", "size": 14.036458333333334, "title": "crc\nfreq: 31\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "physical", "label": "physical", "shape": "dot", "size": 15.078125, "title": "physical\nfreq: 39\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "legal", "label": "legal", "shape": "dot", "size": 24.192708333333336, "title": "legal\nfreq: 109\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "exploitation", "label": "exploitation", "shape": "dot", "size": 14.427083333333334, "title": "exploitation\nfreq: 34\ncommunity: 0"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "criminal", "label": "criminal", "shape": "dot", "size": 20.677083333333332, "title": "criminal\nfreq: 82\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "professionals", "label": "professionals", "shape": "dot", "size": 14.427083333333334, "title": "professionals\nfreq: 34\ncommunity: 2"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "participation", "label": "participation", "shape": "dot", "size": 17.421875, "title": "participation\nfreq: 57\ncommunity: 5"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "parents", "label": "parents", "shape": "dot", "size": 21.197916666666668, "title": "parents\nfreq: 86\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "early", "label": "early", "shape": "dot", "size": 17.682291666666668, "title": "early\nfreq: 59\ncommunity: 2"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "domestic", "label": "domestic", "shape": "dot", "size": 13.776041666666666, "title": "domestic\nfreq: 29\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "violence", "label": "violence", "shape": "dot", "size": 18.723958333333332, "title": "violence\nfreq: 67\ncommunity: 6"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "csa", "label": "csa", "shape": "dot", "size": 17.161458333333332, "title": "csa\nfreq: 55\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "laws", "label": "laws", "shape": "dot", "size": 17.03125, "title": "laws\nfreq: 54\ncommunity: 2"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "care", "label": "care", "shape": "dot", "size": 20.15625, "title": "care\nfreq: 78\ncommunity: 3"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "evidence", "label": "evidence", "shape": "dot", "size": 18.203125, "title": "evidence\nfreq: 63\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "law", "label": "law", "shape": "dot", "size": 18.333333333333332, "title": "law\nfreq: 64\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "both", "label": "both", "shape": "dot", "size": 18.463541666666668, "title": "both\nfreq: 65\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "trafficking", "label": "trafficking", "shape": "dot", "size": 14.6875, "title": "trafficking\nfreq: 36\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "right", "label": "right", "shape": "dot", "size": 18.072916666666668, "title": "right\nfreq: 62\ncommunity: 1"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "exposure", "label": "exposure", "shape": "dot", "size": 13.90625, "title": "exposure\nfreq: 30\ncommunity: 6"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "medical", "label": "medical", "shape": "dot", "size": 15.338541666666666, "title": "medical\nfreq: 41\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "family", "label": "family", "shape": "dot", "size": 19.635416666666668, "title": "family\nfreq: 74\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "development", "label": "development", "shape": "dot", "size": 19.244791666666668, "title": "development\nfreq: 71\ncommunity: 1"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "against", "label": "against", "shape": "dot", "size": 14.557291666666666, "title": "against\nfreq: 35\ncommunity: 6"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "problems", "label": "problems", "shape": "dot", "size": 15.208333333333334, "title": "problems\nfreq: 40\ncommunity: 3"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "practice", "label": "practice", "shape": "dot", "size": 15.989583333333334, "title": "practice\nfreq: 46\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "involvement", "label": "involvement", "shape": "dot", "size": 13.776041666666666, "title": "involvement\nfreq: 29\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "services", "label": "services", "shape": "dot", "size": 15.338541666666666, "title": "services\nfreq: 41\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "information", "label": "information", "shape": "dot", "size": 14.427083333333334, "title": "information\nfreq: 34\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "adulthood", "label": "adulthood", "shape": "dot", "size": 13.645833333333334, "title": "adulthood\nfreq: 28\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "offending", "label": "offending", "shape": "dot", "size": 16.640625, "title": "offending\nfreq: 51\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "parental", "label": "parental", "shape": "dot", "size": 15.46875, "title": "parental\nfreq: 42\ncommunity: 2"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "efforts", "label": "efforts", "shape": "dot", "size": 14.036458333333334, "title": "efforts\nfreq: 31\ncommunity: 7"}, {"color": "#A8D8EA", "font": {"color": "#333333"}, "id": "prevention", "label": "prevention", "shape": "dot", "size": 14.557291666666666, "title": "prevention\nfreq: 35\ncommunity: 7"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "high", "label": "high", "shape": "dot", "size": 15.078125, "title": "high\nfreq: 39\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "marriage", "label": "marriage", "shape": "dot", "size": 15.338541666666666, "title": "marriage\nfreq: 41\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "offenders", "label": "offenders", "shape": "dot", "size": 17.03125, "title": "offenders\nfreq: 54\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "well", "label": "well", "shape": "dot", "size": 16.25, "title": "well\nfreq: 48\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "welfare", "label": "welfare", "shape": "dot", "size": 15.46875, "title": "welfare\nfreq: 42\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "among", "label": "among", "shape": "dot", "size": 17.8125, "title": "among\nfreq: 60\ncommunity: 4"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "sex", "label": "sex", "shape": "dot", "size": 13.90625, "title": "sex\nfreq: 30\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "education", "label": "education", "shape": "dot", "size": 15.338541666666666, "title": "education\nfreq: 41\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "ace", "label": "ace", "shape": "dot", "size": 13.645833333333334, "title": "ace\nfreq: 28\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "trauma", "label": "trauma", "shape": "dot", "size": 15.598958333333334, "title": "trauma\nfreq: 43\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "understanding", "label": "understanding", "shape": "dot", "size": 14.6875, "title": "understanding\nfreq: 36\ncommunity: 2"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "policy", "label": "policy", "shape": "dot", "size": 17.942708333333332, "title": "policy\nfreq: 61\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "framework", "label": "framework", "shape": "dot", "size": 14.296875, "title": "framework\nfreq: 33\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "under", "label": "under", "shape": "dot", "size": 14.817708333333334, "title": "under\nfreq: 37\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "work", "label": "work", "shape": "dot", "size": 14.817708333333334, "title": "work\nfreq: 37\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "life", "label": "life", "shape": "dot", "size": 15.208333333333334, "title": "life\nfreq: 40\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "families", "label": "families", "shape": "dot", "size": 15.338541666666666, "title": "families\nfreq: 41\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "support", "label": "support", "shape": "dot", "size": 15.598958333333334, "title": "support\nfreq: 43\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "within", "label": "within", "shape": "dot", "size": 15.338541666666666, "title": "within\nfreq: 41\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "case", "label": "case", "shape": "dot", "size": 14.947916666666666, "title": "case\nfreq: 38\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "community", "label": "community", "shape": "dot", "size": 14.036458333333334, "title": "community\nfreq: 31\ncommunity: 2"}]);
+                  edges = new vis.DataSet([{"from": "abuse", "title": "co-occurrence: 85", "to": "sexual", "value": 85}, {"from": "abuse", "title": "co-occurrence: 36", "to": "with", "value": 36}, {"from": "abuse", "title": "co-occurrence: 33", "to": "cases", "value": 33}, {"from": "abuse", "title": "co-occurrence: 20", "to": "physical", "value": 20}, {"from": "abuse", "title": "co-occurrence: 15", "to": "csa", "value": 15}, {"from": "abuse", "title": "co-occurrence: 15", "to": "risk", "value": 15}, {"from": "abuse", "title": "co-occurrence: 14", "to": "evidence", "value": 14}, {"from": "abuse", "title": "co-occurrence: 12", "to": "social", "value": 12}, {"from": "abuse", "title": "co-occurrence: 12", "to": "experiences", "value": 12}, {"from": "abuse", "title": "co-occurrence: 10", "to": "offenders", "value": 10}, {"from": "abuse", "title": "co-occurrence: 10", "to": "both", "value": 10}, {"from": "abuse", "title": "co-occurrence: 10", "to": "among", "value": 10}, {"from": "abuse", "title": "co-occurrence: 9", "to": "policy", "value": 9}, {"from": "abuse", "title": "co-occurrence: 9", "to": "protection", "value": 9}, {"from": "abuse", "title": "co-occurrence: 9", "to": "exploitation", "value": 9}, {"from": "abuse", "title": "co-occurrence: 9", "to": "criminal", "value": 9}, {"from": "abuse", "title": "co-occurrence: 9", "to": "adverse", "value": 9}, {"from": "abuse", "title": "co-occurrence: 8", "to": "support", "value": 8}, {"from": "sexual", "title": "co-occurrence: 22", "to": "with", "value": 22}, {"from": "sexual", "title": "co-occurrence: 19", "to": "exploitation", "value": 19}, {"from": "sexual", "title": "co-occurrence: 15", "to": "csa", "value": 15}, {"from": "sexual", "title": "co-occurrence: 15", "to": "cases", "value": 15}, {"from": "sexual", "title": "co-occurrence: 13", "to": "physical", "value": 13}, {"from": "sexual", "title": "co-occurrence: 11", "to": "risk", "value": 11}, {"from": "sexual", "title": "co-occurrence: 10", "to": "offending", "value": 10}, {"from": "sexual", "title": "co-occurrence: 10", "to": "sex", "value": 10}, {"from": "sexual", "title": "co-occurrence: 10", "to": "criminal", "value": 10}, {"from": "sexual", "title": "co-occurrence: 8", "to": "evidence", "value": 8}, {"from": "convention", "title": "co-occurrence: 41", "to": "rights", "value": 41}, {"from": "convention", "title": "co-occurrence: 11", "to": "crc", "value": 11}, {"from": "convention", "title": "co-occurrence: 9", "to": "with", "value": 9}, {"from": "convention", "title": "co-occurrence: 8", "to": "right", "value": 8}, {"from": "convention", "title": "co-occurrence: 8", "to": "human", "value": 8}, {"from": "rights", "title": "co-occurrence: 37", "to": "human", "value": 37}, {"from": "rights", "title": "co-occurrence: 30", "to": "with", "value": 30}, {"from": "rights", "title": "co-occurrence: 20", "to": "crc", "value": 20}, {"from": "rights", "title": "co-occurrence: 14", "to": "legal", "value": 14}, {"from": "rights", "title": "co-occurrence: 13", "to": "right", "value": 13}, {"from": "rights", "title": "co-occurrence: 12", "to": "development", "value": 12}, {"from": "rights", "title": "co-occurrence: 12", "to": "protection", "value": 12}, {"from": "rights", "title": "co-occurrence: 12", "to": "health", "value": 12}, {"from": "rights", "title": "co-occurrence: 10", "to": "education", "value": 10}, {"from": "rights", "title": "co-occurrence: 9", "to": "participation", "value": 9}, {"from": "rights", "title": "co-occurrence: 9", "to": "framework", "value": 9}, {"from": "rights", "title": "co-occurrence: 9", "to": "under", "value": 9}, {"from": "rights", "title": "co-occurrence: 8", "to": "care", "value": 8}, {"from": "rights", "title": "co-occurrence: 8", "to": "within", "value": 8}, {"from": "human", "title": "co-occurrence: 14", "to": "with", "value": 14}, {"from": "human", "title": "co-occurrence: 13", "to": "trafficking", "value": 13}, {"from": "with", "title": "co-occurrence: 28", "to": "health", "value": 28}, {"from": "with", "title": "co-occurrence: 27", "to": "aces", "value": 27}, {"from": "with", "title": "co-occurrence: 25", "to": "risk", "value": 25}, {"from": "with", "title": "co-occurrence: 22", "to": "protection", "value": 22}, {"from": "with", "title": "co-occurrence: 21", "to": "social", "value": 21}, {"from": "with", "title": "co-occurrence: 20", "to": "legal", "value": 20}, {"from": "with", "title": "co-occurrence: 19", "to": "system", "value": 19}, {"from": "with", "title": "co-occurrence: 19", "to": "criminal", "value": 19}, {"from": "with", "title": "co-occurrence: 18", "to": "mental", "value": 18}, {"from": "with", "title": "co-occurrence: 18", "to": "experiences", "value": 18}, {"from": "with", "title": "co-occurrence: 17", "to": "professionals", "value": 17}, {"from": "with", "title": "co-occurrence: 17", "to": "cases", "value": 17}, {"from": "with", "title": "co-occurrence: 17", "to": "parents", "value": 17}, {"from": "with", "title": "co-occurrence: 17", "to": "justice", "value": 17}, {"from": "with", "title": "co-occurrence: 17", "to": "early", "value": 17}, {"from": "with", "title": "co-occurrence: 16", "to": "adverse", "value": 16}, {"from": "with", "title": "co-occurrence: 15", "to": "laws", "value": 15}, {"from": "with", "title": "co-occurrence: 14", "to": "evidence", "value": 14}, {"from": "with", "title": "co-occurrence: 14", "to": "law", "value": 14}, {"from": "with", "title": "co-occurrence: 14", "to": "both", "value": 14}, {"from": "with", "title": "co-occurrence: 13", "to": "exposure", "value": 13}, {"from": "with", "title": "co-occurrence: 12", "to": "medical", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "family", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "csa", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "practice", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "involvement", "value": 12}, {"from": "with", "title": "co-occurrence: 11", "to": "services", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "problems", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "development", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "involved", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "information", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "adulthood", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "offending", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "parental", "value": 11}, {"from": "with", "title": "co-occurrence: 10", "to": "high", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "violence", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "well", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "welfare", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "education", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "trauma", "value": 10}, {"from": "with", "title": "co-occurrence: 9", "to": "among", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "understanding", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "under", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "care", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "work", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "physical", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "life", "value": 9}, {"from": "with", "title": "co-occurrence: 8", "to": "families", "value": 8}, {"from": "with", "title": "co-occurrence: 8", "to": "policy", "value": 8}, {"from": "with", "title": "co-occurrence: 8", "to": "case", "value": 8}, {"from": "with", "title": "co-occurrence: 8", "to": "community", "value": 8}, {"from": "health", "title": "co-occurrence: 30", "to": "mental", "value": 30}, {"from": "health", "title": "co-occurrence: 27", "to": "public", "value": 27}, {"from": "health", "title": "co-occurrence: 15", "to": "care", "value": 15}, {"from": "health", "title": "co-occurrence: 14", "to": "social", "value": 14}, {"from": "health", "title": "co-occurrence: 14", "to": "aces", "value": 14}, {"from": "health", "title": "co-occurrence: 12", "to": "problems", "value": 12}, {"from": "health", "title": "co-occurrence: 12", "to": "justice", "value": 12}, {"from": "health", "title": "co-occurrence: 12", "to": "involvement", "value": 12}, {"from": "health", "title": "co-occurrence: 9", "to": "system", "value": 9}, {"from": "mental", "title": "co-occurrence: 9", "to": "problems", "value": 9}, {"from": "mental", "title": "co-occurrence: 9", "to": "involvement", "value": 9}, {"from": "adverse", "title": "co-occurrence: 28", "to": "experiences", "value": 28}, {"from": "adverse", "title": "co-occurrence: 19", "to": "aces", "value": 19}, {"from": "adverse", "title": "co-occurrence: 11", "to": "justice", "value": 11}, {"from": "adverse", "title": "co-occurrence: 10", "to": "involvement", "value": 10}, {"from": "experiences", "title": "co-occurrence: 22", "to": "aces", "value": 22}, {"from": "experiences", "title": "co-occurrence: 11", "to": "justice", "value": 11}, {"from": "decision", "title": "co-occurrence: 27", "to": "making", "value": 27}, {"from": "decision", "title": "co-occurrence: 8", "to": "protection", "value": 8}, {"from": "making", "title": "co-occurrence: 9", "to": "protection", "value": 9}, {"from": "justice", "title": "co-occurrence: 27", "to": "system", "value": 27}, {"from": "justice", "title": "co-occurrence: 25", "to": "aces", "value": 25}, {"from": "justice", "title": "co-occurrence: 22", "to": "involved", "value": 22}, {"from": "justice", "title": "co-occurrence: 16", "to": "criminal", "value": 16}, {"from": "justice", "title": "co-occurrence: 11", "to": "involvement", "value": 11}, {"from": "justice", "title": "co-occurrence: 9", "to": "among", "value": 9}, {"from": "system", "title": "co-occurrence: 15", "to": "aces", "value": 15}, {"from": "system", "title": "co-occurrence: 13", "to": "criminal", "value": 13}, {"from": "system", "title": "co-occurrence: 12", "to": "protection", "value": 12}, {"from": "system", "title": "co-occurrence: 12", "to": "involvement", "value": 12}, {"from": "aces", "title": "co-occurrence: 15", "to": "criminal", "value": 15}, {"from": "aces", "title": "co-occurrence: 12", "to": "involved", "value": 12}, {"from": "aces", "title": "co-occurrence: 10", "to": "among", "value": 10}, {"from": "aces", "title": "co-occurrence: 10", "to": "ace", "value": 10}, {"from": "aces", "title": "co-occurrence: 9", "to": "involvement", "value": 9}, {"from": "risk", "title": "co-occurrence: 11", "to": "criminal", "value": 11}, {"from": "protection", "title": "co-occurrence: 17", "to": "participation", "value": 17}, {"from": "protection", "title": "co-occurrence: 12", "to": "social", "value": 12}, {"from": "protection", "title": "co-occurrence: 9", "to": "legal", "value": 9}, {"from": "protection", "title": "co-occurrence: 8", "to": "policy", "value": 8}, {"from": "legal", "title": "co-occurrence: 12", "to": "law", "value": 12}, {"from": "exploitation", "title": "co-occurrence: 10", "to": "trafficking", "value": 10}, {"from": "criminal", "title": "co-occurrence: 10", "to": "offenders", "value": 10}, {"from": "criminal", "title": "co-occurrence: 9", "to": "law", "value": 9}, {"from": "domestic", "title": "co-occurrence: 16", "to": "violence", "value": 16}, {"from": "violence", "title": "co-occurrence: 12", "to": "against", "value": 12}, {"from": "violence", "title": "co-occurrence: 9", "to": "exposure", "value": 9}, {"from": "laws", "title": "co-occurrence: 10", "to": "marriage", "value": 10}, {"from": "right", "title": "co-occurrence: 9", "to": "development", "value": 9}, {"from": "efforts", "title": "co-occurrence: 10", "to": "prevention", "value": 10}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -5000,
+            "springConstant": 0.001,
+            "springLength": 150
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

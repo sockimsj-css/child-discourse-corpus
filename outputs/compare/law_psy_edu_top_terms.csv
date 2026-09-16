@@ -1,0 +1,451 @@
+sheet,group,rank,term,tfidf_score,field
+tfidf_top,child/children,1,aces,0.23244,law
+tfidf_top,child/children,2,children rights,0.18203,law
+tfidf_top,child/children,3,csa,0.17974,law
+tfidf_top,child/children,4,child protection,0.17171,law
+tfidf_top,child/children,5,violence,0.16203,law
+tfidf_top,child/children,6,child abuse,0.1185,law
+tfidf_top,child/children,7,marriage,0.11482,law
+tfidf_top,child/children,8,maltreatment,0.11202,law
+tfidf_top,child/children,9,child sexual,0.11125,law
+tfidf_top,child/children,10,rights child,0.11125,law
+tfidf_top,child/children,11,child welfare,0.10784,law
+tfidf_top,child/children,12,crc,0.10131,law
+tfidf_top,child/children,13,child marriage,0.10064,law
+tfidf_top,child/children,14,medical,0.09915,law
+tfidf_top,child/children,15,education,0.09915,law
+tfidf_top,child/children,16,early childhood,0.08824,law
+tfidf_top,child/children,17,understanding,0.08706,law
+tfidf_top,child/children,18,trafficking,0.08706,law
+tfidf_top,child/children,19,convention rights,0.08706,law
+tfidf_top,child/children,20,decision,0.08464,law
+tfidf_top,child/children,21,exploitation,0.08223,law
+tfidf_top,child/children,22,adversity,0.08129,law
+tfidf_top,child/children,23,methamphetamine,0.08129,law
+tfidf_top,child/children,24,online,0.08121,law
+tfidf_top,child/children,25,childhood experiences,0.07981,law
+tfidf_top,youth,1,police,0.29539,law
+tfidf_top,youth,2,young adults,0.21772,law
+tfidf_top,youth,3,youth justice,0.19901,law
+tfidf_top,youth,4,young adult,0.15966,law
+tfidf_top,youth,5,children young,0.14878,law
+tfidf_top,youth,6,diversion,0.1306,law
+tfidf_top,youth,7,child welfare,0.10886,law
+tfidf_top,youth,8,suicide,0.10741,law
+tfidf_top,youth,9,recidivism,0.10473,law
+tfidf_top,youth,10,marijuana,0.0964,law
+tfidf_top,youth,11,justice systems,0.09435,law
+tfidf_top,youth,12,18,0.0913,law
+tfidf_top,youth,13,firearm,0.09018,law
+tfidf_top,youth,14,cigarette,0.08346,law
+tfidf_top,youth,15,harm,0.08056,law
+tfidf_top,youth,16,violence,0.08056,law
+tfidf_top,youth,17,perceptions,0.07788,law
+tfidf_top,youth,18,wales,0.0762,law
+tfidf_top,youth,19,delinquent,0.07519,law
+tfidf_top,youth,20,tobacco,0.07463,law
+tfidf_top,youth,21,legal cynicism,0.07307,law
+tfidf_top,youth,22,cynicism,0.07307,law
+tfidf_top,youth,23,access,0.0725,law
+tfidf_top,youth,24,risk youth,0.06877,law
+tfidf_top,youth,25,youth offenders,0.06841,law
+tfidf_top,adolescent,1,consent,0.27383,law
+tfidf_top,adolescent,2,marijuana,0.21743,law
+tfidf_top,adolescent,3,violence,0.15648,law
+tfidf_top,adolescent,4,police,0.14865,law
+tfidf_top,adolescent,5,access,0.14474,law
+tfidf_top,adolescent,6,adulthood,0.14042,law
+tfidf_top,adolescent,7,medical,0.12909,law
+tfidf_top,adolescent,8,contraception,0.12158,law
+tfidf_top,adolescent,9,pregnancy,0.11778,law
+tfidf_top,adolescent,10,abortion,0.11325,law
+tfidf_top,adolescent,11,ethical,0.10953,law
+tfidf_top,adolescent,12,confidentiality,0.10419,law
+tfidf_top,adolescent,13,confidential,0.10044,law
+tfidf_top,adolescent,14,developmental,0.09389,law
+tfidf_top,adolescent,15,decision,0.08997,law
+tfidf_top,adolescent,16,18,0.08215,law
+tfidf_top,adolescent,17,assault,0.08154,law
+tfidf_top,adolescent,18,firearm,0.08154,law
+tfidf_top,adolescent,19,legal socialization,0.0814,law
+tfidf_top,adolescent,20,sexual assault,0.07701,law
+tfidf_top,adolescent,21,health information,0.07513,law
+tfidf_top,adolescent,22,informed,0.07433,law
+tfidf_top,adolescent,23,socialization,0.07401,law
+tfidf_top,adolescent,24,rape,0.07401,law
+tfidf_top,adolescent,25,legitimacy,0.07248,law
+tfidf_top,minor,1,minors,0.67956,law
+tfidf_top,minor,2,trafficking,0.15754,law
+tfidf_top,minor,3,dmst,0.14338,law
+tfidf_top,minor,4,consent,0.13282,law
+tfidf_top,minor,5,sex trafficking,0.11866,law
+tfidf_top,minor,6,decision,0.10811,law
+tfidf_top,minor,7,unaccompanied,0.10018,law
+tfidf_top,minor,8,online,0.09658,law
+tfidf_top,minor,9,medical,0.08649,law
+tfidf_top,minor,10,patients,0.07722,law
+tfidf_top,minor,11,access,0.07722,law
+tfidf_top,minor,12,ends,0.07096,law
+tfidf_top,minor,13,minor sex,0.06922,law
+tfidf_top,minor,14,abortions,0.06922,law
+tfidf_top,minor,15,unaccompanied minors,0.06922,law
+tfidf_top,minor,16,understanding,0.06796,law
+tfidf_top,minor,17,jurisprudence,0.06796,law
+tfidf_top,minor,18,cigarettes,0.06261,law
+tfidf_top,minor,19,disciplinary,0.06261,law
+tfidf_top,minor,20,domestic,0.06178,law
+tfidf_top,minor,21,hiv,0.06081,law
+tfidf_top,minor,22,sextortion,0.05933,law
+tfidf_top,minor,23,violence,0.05869,law
+tfidf_top,minor,24,testing,0.05723,law
+tfidf_top,minor,25,tobacco,0.05723,law
+tfidf_top,teenage,1,teenage,0.52286,law
+tfidf_top,teenage,2,education,0.20417,law
+tfidf_top,teenage,3,pregnancy,0.15004,law
+tfidf_top,teenage,4,pregnant,0.13264,law
+tfidf_top,teenage,5,sexual harassment,0.11673,law
+tfidf_top,teenage,6,marriage,0.11367,law
+tfidf_top,teenage,7,police,0.10994,law
+tfidf_top,teenage,8,harassment,0.10912,law
+tfidf_top,teenage,9,violence,0.10601,law
+tfidf_top,teenage,10,teenage pregnancy,0.10055,law
+tfidf_top,teenage,11,emotional,0.09816,law
+tfidf_top,teenage,12,workers,0.08245,law
+tfidf_top,teenage,13,minors,0.08245,law
+tfidf_top,teenage,14,muslim,0.0817,law
+tfidf_top,teenage,15,city,0.07853,law
+tfidf_top,teenage,16,women,0.07853,law
+tfidf_top,teenage,17,perpetrators,0.07275,law
+tfidf_top,teenage,18,media,0.07067,law
+tfidf_top,teenage,19,pregnancies,0.06913,law
+tfidf_top,teenage,20,gambling,0.06913,law
+tfidf_top,teenage,21,early marriage,0.06897,law
+tfidf_top,teenage,22,conflict,0.06675,law
+tfidf_top,teenage,23,socio,0.06675,law
+tfidf_top,teenage,24,enforcement,0.06675,law
+tfidf_top,teenage,25,online gambling,0.06284,law
+tfidf_top,juvenile,1,juvenile offenders,0.38515,law
+tfidf_top,juvenile,2,recidivism,0.27321,law
+tfidf_top,juvenile,3,juvenile delinquency,0.21382,law
+tfidf_top,juvenile,4,behavioral health,0.14447,law
+tfidf_top,juvenile,5,juvenile court,0.11879,law
+tfidf_top,juvenile,6,subgroups,0.11879,law
+tfidf_top,juvenile,7,decision,0.10691,law
+tfidf_top,juvenile,8,adjudication,0.09631,law
+tfidf_top,juvenile,9,health problems,0.09629,law
+tfidf_top,juvenile,10,jj,0.09506,law
+tfidf_top,juvenile,11,delinquency prevention,0.09506,law
+tfidf_top,juvenile,12,probation,0.09503,law
+tfidf_top,juvenile,13,race,0.09503,law
+tfidf_top,juvenile,14,trauma informed,0.08315,law
+tfidf_top,juvenile,15,informed,0.08315,law
+tfidf_top,juvenile,16,strategy,0.08253,law
+tfidf_top,juvenile,17,health disorders,0.08253,law
+tfidf_top,juvenile,18,secure,0.08253,law
+tfidf_top,juvenile,19,parental involvement,0.08026,law
+tfidf_top,juvenile,20,multidimensional,0.07605,law
+tfidf_top,juvenile,21,ptsd,0.07605,law
+tfidf_top,juvenile,22,juvenile probation,0.07605,law
+tfidf_top,juvenile,23,female juvenile,0.07605,law
+tfidf_top,juvenile,24,delinquent,0.07127,law
+tfidf_top,juvenile,25,decision making,0.07127,law
+tfidf_top,youth,1,media,0.19705,psychology
+tfidf_top,youth,2,climate,0.18313,psychology
+tfidf_top,youth,3,young adult,0.18275,psychology
+tfidf_top,youth,4,young adults,0.17321,psychology
+tfidf_top,youth,5,transgender,0.17113,psychology
+tfidf_top,youth,6,social media,0.16845,psychology
+tfidf_top,youth,7,online,0.15097,psychology
+tfidf_top,youth,8,digital,0.13985,psychology
+tfidf_top,youth,9,harm,0.12554,psychology
+tfidf_top,youth,10,help seeking,0.11811,psychology
+tfidf_top,youth,11,self harm,0.11811,psychology
+tfidf_top,youth,12,background,0.10965,psychology
+tfidf_top,youth,13,children young,0.10489,psychology
+tfidf_top,youth,14,identity,0.10011,psychology
+tfidf_top,youth,15,adhd,0.09694,psychology
+tfidf_top,youth,16,aces,0.09663,psychology
+tfidf_top,youth,17,sexual minority,0.09157,psychology
+tfidf_top,youth,18,covid,0.09017,psychology
+tfidf_top,youth,19,covid 19,0.09017,psychology
+tfidf_top,youth,20,loneliness,0.09017,psychology
+tfidf_top,youth,21,25,0.0874,psychology
+tfidf_top,youth,22,autistic,0.08375,psychology
+tfidf_top,youth,23,qualitative,0.08263,psychology
+tfidf_top,youth,24,minority,0.07946,psychology
+tfidf_top,youth,25,smartphone,0.07885,psychology
+tfidf_top,child/children,1,asd,0.40903,psychology
+tfidf_top,child/children,2,maltreatment,0.30675,psychology
+tfidf_top,child/children,3,aces,0.17837,psychology
+tfidf_top,child/children,4,childhood trauma,0.17556,psychology
+tfidf_top,child/children,5,adversity,0.17289,psychology
+tfidf_top,child/children,6,childhood adversity,0.17258,psychology
+tfidf_top,child/children,7,children aged,0.16329,psychology
+tfidf_top,child/children,8,trauma,0.15802,psychology
+tfidf_top,child/children,9,childhood maltreatment,0.15073,psychology
+tfidf_top,child/children,10,pandemic,0.13347,psychology
+tfidf_top,child/children,11,covid 19,0.12917,psychology
+tfidf_top,child/children,12,covid,0.12917,psychology
+tfidf_top,child/children,13,parenting,0.12828,psychology
+tfidf_top,child/children,14,children asd,0.09522,psychology
+tfidf_top,child/children,15,neglect,0.0911,psychology
+tfidf_top,child/children,16,diagnosis,0.08826,psychology
+tfidf_top,child/children,17,autism,0.0818,psychology
+tfidf_top,child/children,18,hispanic,0.0818,psychology
+tfidf_top,child/children,19,obesity,0.08039,psychology
+tfidf_top,child/children,20,surveillance,0.08034,psychology
+tfidf_top,child/children,21,health children,0.07439,psychology
+tfidf_top,child/children,22,parent child,0.0725,psychology
+tfidf_top,child/children,23,estimates,0.06693,psychology
+tfidf_top,child/children,24,learning,0.06693,psychology
+tfidf_top,child/children,25,000,0.06674,psychology
+tfidf_top,adolescent,1,sleep,0.16697,psychology
+tfidf_top,adolescent,2,emotion,0.16363,psychology
+tfidf_top,adolescent,3,bullying,0.16241,psychology
+tfidf_top,adolescent,4,media,0.15027,psychology
+tfidf_top,adolescent,5,processes,0.13023,psychology
+tfidf_top,adolescent,6,alcohol,0.12022,psychology
+tfidf_top,adolescent,7,maturation,0.11987,psychology
+tfidf_top,adolescent,8,late,0.11354,psychology
+tfidf_top,adolescent,9,adolescent depression,0.11224,psychology
+tfidf_top,adolescent,10,parent adolescent,0.1083,psychology
+tfidf_top,adolescent,11,emotion regulation,0.10686,psychology
+tfidf_top,adolescent,12,mdd,0.10379,psychology
+tfidf_top,adolescent,13,social media,0.10352,psychology
+tfidf_top,adolescent,14,depressive symptoms,0.10352,psychology
+tfidf_top,adolescent,15,perpetration,0.09476,psychology
+tfidf_top,adolescent,16,late adolescence,0.0928,psychology
+tfidf_top,adolescent,17,reward,0.0928,psychology
+tfidf_top,adolescent,18,early adolescence,0.0928,psychology
+tfidf_top,adolescent,19,ef,0.09086,psychology
+tfidf_top,adolescent,20,cognitive control,0.09086,psychology
+tfidf_top,adolescent,21,prosocial,0.08574,psychology
+tfidf_top,adolescent,22,young adulthood,0.0812,psychology
+tfidf_top,adolescent,23,insomnia,0.08017,psychology
+tfidf_top,adolescent,24,middle,0.08014,psychology
+tfidf_top,adolescent,25,pandemic,0.07734,psychology
+tfidf_top,teenage,1,teenage,0.69384,psychology
+tfidf_top,teenage,2,teenager,0.29594,psychology
+tfidf_top,teenage,3,pregnancy,0.29258,psychology
+tfidf_top,teenage,4,teenagers,0.2593,psychology
+tfidf_top,teenage,5,mothers,0.16118,psychology
+tfidf_top,teenage,6,teenage mothers,0.14582,psychology
+tfidf_top,teenage,7,driving,0.11767,psychology
+tfidf_top,teenage,8,pregnant,0.11127,psychology
+tfidf_top,teenage,9,parenting,0.06482,psychology
+tfidf_top,teenage,10,childbearing,0.0645,psychology
+tfidf_top,teenage,11,marriage,0.06392,psychology
+tfidf_top,teenage,12,women,0.06307,psychology
+tfidf_top,teenage,13,media,0.06307,psychology
+tfidf_top,teenage,14,teenage childbearing,0.05608,psychology
+tfidf_top,teenage,15,contraceptive,0.05048,psychology
+tfidf_top,teenage,16,marketing,0.04498,psychology
+tfidf_top,teenage,17,teens,0.04498,psychology
+tfidf_top,teenage,18,reproductive,0.04463,psychology
+tfidf_top,teenage,19,qualitative,0.0438,psychology
+tfidf_top,teenage,20,questionnaire,0.0438,psychology
+tfidf_top,teenage,21,feedback,0.04261,psychology
+tfidf_top,teenage,22,accepting,0.04206,psychology
+tfidf_top,teenage,23,sexuality,0.04025,psychology
+tfidf_top,teenage,24,iq,0.04025,psychology
+tfidf_top,teenage,25,mobile phone,0.03926,psychology
+tfidf_top,minor,1,minors,0.64466,psychology
+tfidf_top,minor,2,minor,0.421,psychology
+tfidf_top,minor,3,refugee,0.25823,psychology
+tfidf_top,minor,4,unaccompanied,0.24565,psychology
+tfidf_top,minor,5,ptsd,0.14735,psychology
+tfidf_top,minor,6,minor depression,0.10547,psychology
+tfidf_top,minor,7,online,0.09998,psychology
+tfidf_top,minor,8,traumatic,0.07726,psychology
+tfidf_top,minor,9,trauma,0.06135,psychology
+tfidf_top,minor,10,background,0.05226,psychology
+tfidf_top,minor,11,host,0.05092,psychology
+tfidf_top,minor,12,shame,0.05092,psychology
+tfidf_top,minor,13,guilt,0.05092,psychology
+tfidf_top,minor,14,medical,0.04999,psychology
+tfidf_top,minor,15,testing,0.04999,psychology
+tfidf_top,minor,16,cbt,0.04913,psychology
+tfidf_top,minor,17,subjects,0.04772,psychology
+tfidf_top,minor,18,migration,0.04606,psychology
+tfidf_top,minor,19,speech,0.04606,psychology
+tfidf_top,minor,20,laws,0.04606,psychology
+tfidf_top,minor,21,legal,0.04545,psychology
+tfidf_top,minor,22,questionnaire,0.04317,psychology
+tfidf_top,minor,23,workers,0.04317,psychology
+tfidf_top,minor,24,t1,0.04299,psychology
+tfidf_top,minor,25,mode,0.04299,psychology
+tfidf_top,juvenile,1,juvenile,0.73095,psychology
+tfidf_top,juvenile,2,justice,0.35369,psychology
+tfidf_top,juvenile,3,juvenile justice,0.34585,psychology
+tfidf_top,juvenile,4,offenders,0.25789,psychology
+tfidf_top,juvenile,5,trauma,0.09825,psychology
+tfidf_top,juvenile,6,delinquency,0.08646,psychology
+tfidf_top,juvenile,7,mice,0.08497,psychology
+tfidf_top,juvenile,8,juvenile delinquency,0.07548,psychology
+tfidf_top,juvenile,9,behavioral health,0.06919,psychology
+tfidf_top,juvenile,10,arrest,0.0629,psychology
+tfidf_top,juvenile,11,restraint,0.05661,psychology
+tfidf_top,juvenile,12,offending,0.05006,psychology
+tfidf_top,juvenile,13,violent,0.05006,psychology
+tfidf_top,juvenile,14,frontal,0.04779,psychology
+tfidf_top,juvenile,15,incarcerated,0.04403,psychology
+tfidf_top,juvenile,16,ptsd,0.04096,psychology
+tfidf_top,juvenile,17,sociability,0.03774,psychology
+tfidf_top,juvenile,18,lateral,0.03774,psychology
+tfidf_top,juvenile,19,gang,0.03774,psychology
+tfidf_top,juvenile,20,juvenile court,0.03774,psychology
+tfidf_top,juvenile,21,cascade,0.03774,psychology
+tfidf_top,juvenile,22,trauma informed,0.03717,psychology
+tfidf_top,juvenile,23,sports,0.03641,psychology
+tfidf_top,juvenile,24,aces,0.03186,psychology
+tfidf_top,juvenile,25,involvement juvenile,0.03186,psychology
+tfidf_top,youth,1,young adults,0.20584,education
+tfidf_top,youth,2,children young,0.17025,education
+tfidf_top,youth,3,physical activity,0.16039,education
+tfidf_top,youth,4,participatory,0.15787,education
+tfidf_top,youth,5,pyd,0.15403,education
+tfidf_top,youth,6,sport,0.14703,education
+tfidf_top,youth,7,lgbtq,0.13692,education
+tfidf_top,youth,8,transition youth,0.13692,education
+tfidf_top,youth,9,strength,0.12282,education
+tfidf_top,youth,10,youth development,0.11762,education
+tfidf_top,youth,11,interview,0.11227,education
+tfidf_top,youth,12,disabilities,0.09906,education
+tfidf_top,youth,13,transgender,0.09413,education
+tfidf_top,youth,14,autistic,0.09413,education
+tfidf_top,youth,15,power,0.09356,education
+tfidf_top,youth,16,wellbeing,0.09089,education
+tfidf_top,youth,17,sexuality,0.08977,education
+tfidf_top,youth,18,pa,0.08977,education
+tfidf_top,youth,19,adulthood,0.08822,education
+tfidf_top,youth,20,foster,0.08048,education
+tfidf_top,youth,21,harm,0.07739,education
+tfidf_top,youth,22,sexual health,0.07586,education
+tfidf_top,youth,23,sexuality education,0.07429,education
+tfidf_top,youth,24,foster care,0.07274,education
+tfidf_top,youth,25,carers,0.07274,education
+tfidf_top,child/children,1,childhood,0.61609,education
+tfidf_top,child/children,2,early childhood,0.56741,education
+tfidf_top,child/children,3,childhood education,0.17255,education
+tfidf_top,child/children,4,young children,0.12753,education
+tfidf_top,child/children,5,educators,0.11492,education
+tfidf_top,child/children,6,father,0.09197,education
+tfidf_top,child/children,7,pa,0.08317,education
+tfidf_top,child/children,8,child development,0.07919,education
+tfidf_top,child/children,9,professional,0.07578,education
+tfidf_top,child/children,10,screen,0.07208,education
+tfidf_top,child/children,11,parent child,0.07023,education
+tfidf_top,child/children,12,preschool,0.06099,education
+tfidf_top,child/children,13,child care,0.05586,education
+tfidf_top,child/children,14,physical activity,0.05267,education
+tfidf_top,child/children,15,child relationships,0.05109,education
+tfidf_top,child/children,16,language skills,0.04854,education
+tfidf_top,child/children,17,wellbeing,0.04788,education
+tfidf_top,child/children,18,caregiver,0.04529,education
+tfidf_top,child/children,19,cognitive development,0.04529,education
+tfidf_top,child/children,20,child abuse,0.04087,education
+tfidf_top,child/children,21,resources,0.0399,education
+tfidf_top,child/children,22,nutrition,0.03881,education
+tfidf_top,child/children,23,social emotional,0.03831,education
+tfidf_top,child/children,24,income,0.03831,education
+tfidf_top,child/children,25,mothers,0.03671,education
+tfidf_top,minor,1,minors,0.70426,education
+tfidf_top,minor,2,leadership,0.25942,education
+tfidf_top,minor,3,undergraduate,0.14527,education
+tfidf_top,minor,4,universities,0.11366,education
+tfidf_top,minor,5,medical,0.11096,education
+tfidf_top,minor,6,catalog,0.09726,education
+tfidf_top,minor,7,edu,0.09726,education
+tfidf_top,minor,8,engineering,0.09474,education
+tfidf_top,minor,9,foreign,0.09352,education
+tfidf_top,minor,10,infractions,0.08604,education
+tfidf_top,minor,11,courses,0.08527,education
+tfidf_top,minor,12,rights,0.07946,education
+tfidf_top,minor,13,identity,0.07479,education
+tfidf_top,minor,14,majors,0.06733,education
+tfidf_top,minor,15,stage,0.06544,education
+tfidf_top,minor,16,asylum,0.06359,education
+tfidf_top,minor,17,personal,0.0631,education
+tfidf_top,minor,18,legal,0.06224,education
+tfidf_top,minor,19,institutions,0.06076,education
+tfidf_top,minor,20,refugee,0.05685,education
+tfidf_top,minor,21,pedagogical,0.05609,education
+tfidf_top,minor,22,pre,0.05142,education
+tfidf_top,minor,23,professional,0.04871,education
+tfidf_top,minor,24,illegal,0.04863,education
+tfidf_top,minor,25,option,0.04863,education
+tfidf_top,teenage,1,teenage,0.67308,education
+tfidf_top,teenage,2,pregnancy,0.33092,education
+tfidf_top,teenage,3,teenagers,0.32235,education
+tfidf_top,teenage,4,teenager,0.24097,education
+tfidf_top,teenage,5,teenage mothers,0.21955,education
+tfidf_top,teenage,6,mothers,0.20918,education
+tfidf_top,teenage,7,teen,0.07545,education
+tfidf_top,teenage,8,learners,0.06687,education
+tfidf_top,teenage,9,pregnant,0.05792,education
+tfidf_top,teenage,10,social media,0.05559,education
+tfidf_top,teenage,11,pregnancies,0.05489,education
+tfidf_top,teenage,12,sexual health,0.05097,education
+tfidf_top,teenage,13,internet,0.04972,education
+tfidf_top,teenage,14,sex education,0.04567,education
+tfidf_top,teenage,15,style,0.04567,education
+tfidf_top,teenage,16,sexuality,0.04567,education
+tfidf_top,teenage,17,character,0.04567,education
+tfidf_top,teenage,18,south africa,0.04391,education
+tfidf_top,teenage,19,bullying,0.04287,education
+tfidf_top,teenage,20,childbearing,0.04117,education
+tfidf_top,teenage,21,secondary schools,0.03772,education
+tfidf_top,teenage,22,descriptive,0.03772,education
+tfidf_top,teenage,23,museum,0.03707,education
+tfidf_top,teenage,24,selected,0.03601,education
+tfidf_top,teenage,25,marriage,0.03475,education
+tfidf_top,adolescent,1,adolescence,0.56643,education
+tfidf_top,adolescent,2,childhood,0.18272,education
+tfidf_top,adolescent,3,connectedness,0.14623,education
+tfidf_top,adolescent,4,adulthood,0.14617,education
+tfidf_top,adolescent,5,sexual health,0.09876,education
+tfidf_top,adolescent,6,adolescent health,0.09876,education
+tfidf_top,adolescent,7,depressive,0.09383,education
+tfidf_top,adolescent,8,childhood adolescence,0.0931,education
+tfidf_top,adolescent,9,spatial,0.0931,education
+tfidf_top,adolescent,10,menstrual,0.08774,education
+tfidf_top,adolescent,11,internalizing,0.08463,education
+tfidf_top,adolescent,12,depressive symptoms,0.08395,education
+tfidf_top,adolescent,13,adolescent mental,0.08395,education
+tfidf_top,adolescent,14,resources,0.0804,education
+tfidf_top,adolescent,15,physical activity,0.0804,education
+tfidf_top,adolescent,16,late adolescence,0.07901,education
+tfidf_top,adolescent,17,parent adolescent,0.07901,education
+tfidf_top,adolescent,18,late,0.07674,education
+tfidf_top,adolescent,19,domains,0.07617,education
+tfidf_top,adolescent,20,sexuality,0.07617,education
+tfidf_top,adolescent,21,health education,0.07309,education
+tfidf_top,adolescent,22,contextual,0.07309,education
+tfidf_top,adolescent,23,ideation,0.07019,education
+tfidf_top,adolescent,24,vocabulary,0.06913,education
+tfidf_top,adolescent,25,schoolwork,0.06434,education
+tfidf_top,juvenile,1,juvenile,0.8972,education
+tfidf_top,juvenile,2,delinquency,0.16089,education
+tfidf_top,juvenile,3,juvenile justice,0.1572,education
+tfidf_top,juvenile,4,juvenile delinquency,0.15337,education
+tfidf_top,juvenile,5,offenders,0.14953,education
+tfidf_top,juvenile,6,forest,0.07668,education
+tfidf_top,juvenile,7,crime,0.06935,education
+tfidf_top,juvenile,8,criminal,0.06798,education
+tfidf_top,juvenile,9,patients,0.06474,education
+tfidf_top,juvenile,10,punishment,0.05179,education
+tfidf_top,juvenile,11,character,0.04993,education
+tfidf_top,juvenile,12,rehabilitation,0.03884,education
+tfidf_top,juvenile,13,incarcerated,0.03451,education
+tfidf_top,juvenile,14,facilities,0.03329,education
+tfidf_top,juvenile,15,education program,0.03237,education
+tfidf_top,juvenile,16,character education,0.03051,education
+tfidf_top,juvenile,17,disabilities,0.02774,education
+tfidf_top,juvenile,18,temperament,0.02684,education
+tfidf_top,juvenile,19,incarceration,0.02684,education
+tfidf_top,juvenile,20,grade retention,0.02684,education
+tfidf_top,juvenile,21,returning,0.02684,education
+tfidf_top,juvenile,22,residential,0.02684,education
+tfidf_top,juvenile,23,offending,0.02684,education
+tfidf_top,juvenile,24,cyber,0.02684,education
+tfidf_top,juvenile,25,special education,0.0259,education

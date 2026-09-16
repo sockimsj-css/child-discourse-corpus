@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1>Co-occurrence: PSYCHOLOGY / "adolescent" (148 papers)</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1>Co-occurrence: PSYCHOLOGY / "adolescent" (148 papers)</h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#96CEB4", "font": {"color": "#333333"}, "id": "health", "label": "health", "shape": "dot", "size": 37.52613240418118, "title": "health\nfreq: 158\ncommunity: 5"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "mental", "label": "mental", "shape": "dot", "size": 31.254355400696863, "title": "mental\nfreq: 122\ncommunity: 5"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "adolescents", "label": "adolescents", "shape": "dot", "size": 54.42508710801394, "title": "adolescents\nfreq: 255\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "with", "label": "with", "shape": "dot", "size": 60.0, "title": "with\nfreq: 287\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "among", "label": "among", "shape": "dot", "size": 23.414634146341463, "title": "among\nfreq: 77\ncommunity: 4"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "depressive", "label": "depressive", "shape": "dot", "size": 18.362369337979096, "title": "depressive\nfreq: 48\ncommunity: 3"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "symptoms", "label": "symptoms", "shape": "dot", "size": 26.202090592334496, "title": "symptoms\nfreq: 93\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "media", "label": "media", "shape": "dot", "size": 17.8397212543554, "title": "media\nfreq: 45\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "social", "label": "social", "shape": "dot", "size": 38.57142857142857, "title": "social\nfreq: 164\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "adulthood", "label": "adulthood", "shape": "dot", "size": 26.550522648083625, "title": "adulthood\nfreq: 95\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "early", "label": "early", "shape": "dot", "size": 24.808362369337978, "title": "early\nfreq: 85\ncommunity: 1"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "disorders", "label": "disorders", "shape": "dot", "size": 25.853658536585364, "title": "disorders\nfreq: 91\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "emotion", "label": "emotion", "shape": "dot", "size": 18.53658536585366, "title": "emotion\nfreq: 49\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "regulation", "label": "regulation", "shape": "dot", "size": 17.49128919860627, "title": "regulation\nfreq: 43\ncommunity: 1"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "anxiety", "label": "anxiety", "shape": "dot", "size": 23.937282229965156, "title": "anxiety\nfreq: 80\ncommunity: 3"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "brain", "label": "brain", "shape": "dot", "size": 25.6794425087108, "title": "brain\nfreq: 90\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "risk", "label": "risk", "shape": "dot", "size": 26.72473867595819, "title": "risk\nfreq: 96\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "cortex", "label": "cortex", "shape": "dot", "size": 15.923344947735192, "title": "cortex\nfreq: 34\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "prefrontal", "label": "prefrontal", "shape": "dot", "size": 14.878048780487806, "title": "prefrontal\nfreq: 28\ncommunity: 0"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "problems", "label": "problems", "shape": "dot", "size": 18.18815331010453, "title": "problems\nfreq: 47\ncommunity: 5"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "depression", "label": "depression", "shape": "dot", "size": 26.02787456445993, "title": "depression\nfreq: 92\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "peer", "label": "peer", "shape": "dot", "size": 20.801393728222997, "title": "peer\nfreq: 62\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "adults", "label": "adults", "shape": "dot", "size": 16.968641114982578, "title": "adults\nfreq: 40\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "development", "label": "development", "shape": "dot", "size": 30.209059233449477, "title": "development\nfreq: 116\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "boys", "label": "boys", "shape": "dot", "size": 14.006968641114982, "title": "boys\nfreq: 23\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "girls", "label": "girls", "shape": "dot", "size": 16.968641114982578, "title": "girls\nfreq: 40\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "behavior", "label": "behavior", "shape": "dot", "size": 22.369337979094077, "title": "behavior\nfreq: 71\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "taking", "label": "taking", "shape": "dot", "size": 14.529616724738677, "title": "taking\nfreq: 26\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "cognitive", "label": "cognitive", "shape": "dot", "size": 20.10452961672474, "title": "cognitive\nfreq: 58\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "control", "label": "control", "shape": "dot", "size": 19.930313588850176, "title": "control\nfreq: 57\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "influence", "label": "influence", "shape": "dot", "size": 17.142857142857142, "title": "influence\nfreq: 41\ncommunity: 4"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "bullying", "label": "bullying", "shape": "dot", "size": 17.317073170731707, "title": "bullying\nfreq: 42\ncommunity: 5"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "victimization", "label": "victimization", "shape": "dot", "size": 14.355400696864113, "title": "victimization\nfreq: 25\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "late", "label": "late", "shape": "dot", "size": 15.923344947735192, "title": "late\nfreq: 34\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "regions", "label": "regions", "shape": "dot", "size": 16.097560975609756, "title": "regions\nfreq: 35\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "parents", "label": "parents", "shape": "dot", "size": 14.006968641114982, "title": "parents\nfreq: 23\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "changes", "label": "changes", "shape": "dot", "size": 19.23344947735192, "title": "changes\nfreq: 53\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "self", "label": "self", "shape": "dot", "size": 23.414634146341463, "title": "self\nfreq: 77\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "evidence", "label": "evidence", "shape": "dot", "size": 19.75609756097561, "title": "evidence\nfreq: 56\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "developmental", "label": "developmental", "shape": "dot", "size": 24.285714285714285, "title": "developmental\nfreq: 82\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "treatment", "label": "treatment", "shape": "dot", "size": 15.923344947735192, "title": "treatment\nfreq: 34\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "behaviors", "label": "behaviors", "shape": "dot", "size": 21.67247386759582, "title": "behaviors\nfreq: 67\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "maturation", "label": "maturation", "shape": "dot", "size": 15.400696864111499, "title": "maturation\nfreq: 31\ncommunity: 1"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "disorder", "label": "disorder", "shape": "dot", "size": 19.75609756097561, "title": "disorder\nfreq: 56\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "well", "label": "well", "shape": "dot", "size": 20.10452961672474, "title": "well\nfreq: 58\ncommunity: 4"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "service", "label": "service", "shape": "dot", "size": 13.658536585365853, "title": "service\nfreq: 21\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "trajectories", "label": "trajectories", "shape": "dot", "size": 14.529616724738677, "title": "trajectories\nfreq: 26\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "across", "label": "across", "shape": "dot", "size": 20.801393728222997, "title": "across\nfreq: 62\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "analyses", "label": "analyses", "shape": "dot", "size": 15.574912891986063, "title": "analyses\nfreq: 32\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "meta", "label": "meta", "shape": "dot", "size": 14.529616724738677, "title": "meta\nfreq: 26\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "sex", "label": "sex", "shape": "dot", "size": 15.923344947735192, "title": "sex\nfreq: 34\ncommunity: 2"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "substance", "label": "substance", "shape": "dot", "size": 18.18815331010453, "title": "substance\nfreq: 47\ncommunity: 5"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "psychological", "label": "psychological", "shape": "dot", "size": 15.05226480836237, "title": "psychological\nfreq: 29\ncommunity: 3"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "associations", "label": "associations", "shape": "dot", "size": 17.49128919860627, "title": "associations\nfreq: 43\ncommunity: 3"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "understanding", "label": "understanding", "shape": "dot", "size": 16.445993031358885, "title": "understanding\nfreq: 37\ncommunity: 1"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "school", "label": "school", "shape": "dot", "size": 17.8397212543554, "title": "school\nfreq: 45\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "processes", "label": "processes", "shape": "dot", "size": 16.794425087108014, "title": "processes\nfreq: 39\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "mdd", "label": "mdd", "shape": "dot", "size": 14.006968641114982, "title": "mdd\nfreq: 23\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "sexual", "label": "sexual", "shape": "dot", "size": 14.529616724738677, "title": "sexual\nfreq: 26\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "survey", "label": "survey", "shape": "dot", "size": 13.832752613240418, "title": "survey\nfreq: 22\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "longitudinal", "label": "longitudinal", "shape": "dot", "size": 17.8397212543554, "title": "longitudinal\nfreq: 45\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "physical", "label": "physical", "shape": "dot", "size": 14.703832752613241, "title": "physical\nfreq: 27\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "one", "label": "one", "shape": "dot", "size": 15.923344947735192, "title": "one\nfreq: 34\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "parent", "label": "parent", "shape": "dot", "size": 17.665505226480835, "title": "parent\nfreq: 44\ncommunity: 2"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "interventions", "label": "interventions", "shape": "dot", "size": 19.059233449477354, "title": "interventions\nfreq: 52\ncommunity: 5"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "internalizing", "label": "internalizing", "shape": "dot", "size": 13.658536585365853, "title": "internalizing\nfreq: 21\ncommunity: 3"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "sleep", "label": "sleep", "shape": "dot", "size": 18.710801393728225, "title": "sleep\nfreq: 50\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "both", "label": "both", "shape": "dot", "size": 18.18815331010453, "title": "both\nfreq: 47\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "high", "label": "high", "shape": "dot", "size": 14.703832752613241, "title": "high\nfreq: 27\ncommunity: 2"}]);
+                  edges = new vis.DataSet([{"from": "health", "title": "co-occurrence: 85", "to": "mental", "value": 85}, {"from": "health", "title": "co-occurrence: 36", "to": "adolescents", "value": 36}, {"from": "health", "title": "co-occurrence: 29", "to": "with", "value": 29}, {"from": "health", "title": "co-occurrence: 22", "to": "problems", "value": 22}, {"from": "health", "title": "co-occurrence: 15", "to": "bullying", "value": 15}, {"from": "health", "title": "co-occurrence: 14", "to": "service", "value": 14}, {"from": "health", "title": "co-occurrence: 13", "to": "disorders", "value": 13}, {"from": "health", "title": "co-occurrence: 11", "to": "school", "value": 11}, {"from": "health", "title": "co-occurrence: 11", "to": "among", "value": 11}, {"from": "health", "title": "co-occurrence: 10", "to": "social", "value": 10}, {"from": "health", "title": "co-occurrence: 10", "to": "adulthood", "value": 10}, {"from": "mental", "title": "co-occurrence: 31", "to": "adolescents", "value": 31}, {"from": "mental", "title": "co-occurrence: 30", "to": "with", "value": 30}, {"from": "mental", "title": "co-occurrence: 21", "to": "disorders", "value": 21}, {"from": "mental", "title": "co-occurrence: 17", "to": "problems", "value": 17}, {"from": "mental", "title": "co-occurrence: 12", "to": "service", "value": 12}, {"from": "mental", "title": "co-occurrence: 12", "to": "bullying", "value": 12}, {"from": "mental", "title": "co-occurrence: 11", "to": "well", "value": 11}, {"from": "mental", "title": "co-occurrence: 9", "to": "social", "value": 9}, {"from": "adolescents", "title": "co-occurrence: 65", "to": "with", "value": 65}, {"from": "adolescents", "title": "co-occurrence: 37", "to": "among", "value": 37}, {"from": "adolescents", "title": "co-occurrence: 25", "to": "social", "value": 25}, {"from": "adolescents", "title": "co-occurrence: 23", "to": "risk", "value": 23}, {"from": "adolescents", "title": "co-occurrence: 21", "to": "depression", "value": 21}, {"from": "adolescents", "title": "co-occurrence: 20", "to": "symptoms", "value": 20}, {"from": "adolescents", "title": "co-occurrence: 19", "to": "adults", "value": 19}, {"from": "adolescents", "title": "co-occurrence: 17", "to": "media", "value": 17}, {"from": "adolescents", "title": "co-occurrence: 16", "to": "parents", "value": 16}, {"from": "adolescents", "title": "co-occurrence: 16", "to": "behavior", "value": 16}, {"from": "adolescents", "title": "co-occurrence: 15", "to": "treatment", "value": 15}, {"from": "adolescents", "title": "co-occurrence: 15", "to": "disorders", "value": 15}, {"from": "adolescents", "title": "co-occurrence: 14", "to": "well", "value": 14}, {"from": "adolescents", "title": "co-occurrence: 14", "to": "self", "value": 14}, {"from": "adolescents", "title": "co-occurrence: 12", "to": "peer", "value": 12}, {"from": "adolescents", "title": "co-occurrence: 12", "to": "anxiety", "value": 12}, {"from": "adolescents", "title": "co-occurrence: 12", "to": "depressive", "value": 12}, {"from": "adolescents", "title": "co-occurrence: 12", "to": "developmental", "value": 12}, {"from": "adolescents", "title": "co-occurrence: 12", "to": "control", "value": 12}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "survey", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "one", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "substance", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "parent", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "interventions", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "regulation", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 10", "to": "emotion", "value": 10}, {"from": "adolescents", "title": "co-occurrence: 9", "to": "associations", "value": 9}, {"from": "adolescents", "title": "co-occurrence: 9", "to": "evidence", "value": 9}, {"from": "with", "title": "co-occurrence: 27", "to": "disorders", "value": 27}, {"from": "with", "title": "co-occurrence: 26", "to": "social", "value": 26}, {"from": "with", "title": "co-occurrence: 23", "to": "anxiety", "value": 23}, {"from": "with", "title": "co-occurrence: 23", "to": "brain", "value": 23}, {"from": "with", "title": "co-occurrence: 22", "to": "risk", "value": 22}, {"from": "with", "title": "co-occurrence: 21", "to": "among", "value": 21}, {"from": "with", "title": "co-occurrence: 21", "to": "symptoms", "value": 21}, {"from": "with", "title": "co-occurrence: 19", "to": "depression", "value": 19}, {"from": "with", "title": "co-occurrence: 19", "to": "behavior", "value": 19}, {"from": "with", "title": "co-occurrence: 16", "to": "adulthood", "value": 16}, {"from": "with", "title": "co-occurrence: 16", "to": "development", "value": 16}, {"from": "with", "title": "co-occurrence: 15", "to": "evidence", "value": 15}, {"from": "with", "title": "co-occurrence: 15", "to": "developmental", "value": 15}, {"from": "with", "title": "co-occurrence: 15", "to": "behaviors", "value": 15}, {"from": "with", "title": "co-occurrence: 14", "to": "disorder", "value": 14}, {"from": "with", "title": "co-occurrence: 14", "to": "cognitive", "value": 14}, {"from": "with", "title": "co-occurrence: 12", "to": "across", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "depressive", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "girls", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "peer", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "sex", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "early", "value": 12}, {"from": "with", "title": "co-occurrence: 12", "to": "regions", "value": 12}, {"from": "with", "title": "co-occurrence: 11", "to": "analyses", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "self", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "associations", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "adults", "value": 11}, {"from": "with", "title": "co-occurrence: 11", "to": "mdd", "value": 11}, {"from": "with", "title": "co-occurrence: 10", "to": "longitudinal", "value": 10}, {"from": "with", "title": "co-occurrence: 10", "to": "sleep", "value": 10}, {"from": "with", "title": "co-occurrence: 9", "to": "one", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "problems", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "meta", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "both", "value": 9}, {"from": "with", "title": "co-occurrence: 9", "to": "high", "value": 9}, {"from": "among", "title": "co-occurrence: 10", "to": "disorders", "value": 10}, {"from": "depressive", "title": "co-occurrence: 34", "to": "symptoms", "value": 34}, {"from": "depressive", "title": "co-occurrence: 16", "to": "anxiety", "value": 16}, {"from": "depressive", "title": "co-occurrence: 9", "to": "psychological", "value": 9}, {"from": "symptoms", "title": "co-occurrence: 24", "to": "anxiety", "value": 24}, {"from": "symptoms", "title": "co-occurrence: 16", "to": "depression", "value": 16}, {"from": "symptoms", "title": "co-occurrence: 14", "to": "self", "value": 14}, {"from": "symptoms", "title": "co-occurrence: 11", "to": "psychological", "value": 11}, {"from": "symptoms", "title": "co-occurrence: 11", "to": "associations", "value": 11}, {"from": "symptoms", "title": "co-occurrence: 10", "to": "disorder", "value": 10}, {"from": "symptoms", "title": "co-occurrence: 10", "to": "internalizing", "value": 10}, {"from": "symptoms", "title": "co-occurrence: 9", "to": "social", "value": 9}, {"from": "media", "title": "co-occurrence: 28", "to": "social", "value": 28}, {"from": "social", "title": "co-occurrence: 19", "to": "peer", "value": 19}, {"from": "social", "title": "co-occurrence: 19", "to": "brain", "value": 19}, {"from": "social", "title": "co-occurrence: 18", "to": "influence", "value": 18}, {"from": "social", "title": "co-occurrence: 16", "to": "development", "value": 16}, {"from": "social", "title": "co-occurrence: 15", "to": "self", "value": 15}, {"from": "social", "title": "co-occurrence: 13", "to": "risk", "value": 13}, {"from": "social", "title": "co-occurrence: 11", "to": "anxiety", "value": 11}, {"from": "social", "title": "co-occurrence: 10", "to": "physical", "value": 10}, {"from": "social", "title": "co-occurrence: 10", "to": "well", "value": 10}, {"from": "social", "title": "co-occurrence: 10", "to": "processes", "value": 10}, {"from": "social", "title": "co-occurrence: 10", "to": "developmental", "value": 10}, {"from": "adulthood", "title": "co-occurrence: 28", "to": "early", "value": 28}, {"from": "adulthood", "title": "co-occurrence: 13", "to": "development", "value": 13}, {"from": "adulthood", "title": "co-occurrence: 12", "to": "late", "value": 12}, {"from": "early", "title": "co-occurrence: 17", "to": "late", "value": 17}, {"from": "early", "title": "co-occurrence: 13", "to": "development", "value": 13}, {"from": "early", "title": "co-occurrence: 10", "to": "developmental", "value": 10}, {"from": "disorders", "title": "co-occurrence: 20", "to": "anxiety", "value": 20}, {"from": "disorders", "title": "co-occurrence: 12", "to": "disorder", "value": 12}, {"from": "disorders", "title": "co-occurrence: 11", "to": "behavior", "value": 11}, {"from": "disorders", "title": "co-occurrence: 11", "to": "substance", "value": 11}, {"from": "emotion", "title": "co-occurrence: 26", "to": "regulation", "value": 26}, {"from": "emotion", "title": "co-occurrence: 11", "to": "control", "value": 11}, {"from": "regulation", "title": "co-occurrence: 10", "to": "control", "value": 10}, {"from": "anxiety", "title": "co-occurrence: 21", "to": "depression", "value": 21}, {"from": "anxiety", "title": "co-occurrence: 14", "to": "disorder", "value": 14}, {"from": "brain", "title": "co-occurrence: 19", "to": "development", "value": 19}, {"from": "brain", "title": "co-occurrence: 17", "to": "regions", "value": 17}, {"from": "brain", "title": "co-occurrence: 16", "to": "changes", "value": 16}, {"from": "brain", "title": "co-occurrence: 15", "to": "maturation", "value": 15}, {"from": "brain", "title": "co-occurrence: 12", "to": "cognitive", "value": 12}, {"from": "brain", "title": "co-occurrence: 12", "to": "developmental", "value": 12}, {"from": "risk", "title": "co-occurrence: 18", "to": "taking", "value": 18}, {"from": "risk", "title": "co-occurrence: 14", "to": "depression", "value": 14}, {"from": "risk", "title": "co-occurrence: 13", "to": "behaviors", "value": 13}, {"from": "risk", "title": "co-occurrence: 10", "to": "developmental", "value": 10}, {"from": "cortex", "title": "co-occurrence: 23", "to": "prefrontal", "value": 23}, {"from": "depression", "title": "co-occurrence: 11", "to": "associations", "value": 11}, {"from": "peer", "title": "co-occurrence: 11", "to": "influence", "value": 11}, {"from": "development", "title": "co-occurrence: 12", "to": "cognitive", "value": 12}, {"from": "development", "title": "co-occurrence: 12", "to": "developmental", "value": 12}, {"from": "development", "title": "co-occurrence: 11", "to": "understanding", "value": 11}, {"from": "development", "title": "co-occurrence: 11", "to": "processes", "value": 11}, {"from": "development", "title": "co-occurrence: 11", "to": "across", "value": 11}, {"from": "boys", "title": "co-occurrence: 19", "to": "girls", "value": 19}, {"from": "behavior", "title": "co-occurrence: 12", "to": "sex", "value": 12}, {"from": "cognitive", "title": "co-occurrence: 18", "to": "control", "value": 18}, {"from": "bullying", "title": "co-occurrence: 18", "to": "victimization", "value": 18}, {"from": "changes", "title": "co-occurrence: 11", "to": "developmental", "value": 11}, {"from": "developmental", "title": "co-occurrence: 13", "to": "trajectories", "value": 13}, {"from": "developmental", "title": "co-occurrence: 11", "to": "across", "value": 11}, {"from": "analyses", "title": "co-occurrence: 12", "to": "meta", "value": 12}, {"from": "sex", "title": "co-occurrence: 11", "to": "sexual", "value": 11}, {"from": "school", "title": "co-occurrence: 10", "to": "interventions", "value": 10}, {"from": "sexual", "title": "co-occurrence: 10", "to": "parent", "value": 10}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -5000,
+            "springConstant": 0.001,
+            "springLength": 150
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

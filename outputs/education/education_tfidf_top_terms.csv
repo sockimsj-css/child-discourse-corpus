@@ -1,0 +1,151 @@
+sheet,group,rank,term,tfidf_score
+tfidf_top,youth,1,young adults,0.20584
+tfidf_top,youth,2,children young,0.17025
+tfidf_top,youth,3,physical activity,0.16039
+tfidf_top,youth,4,participatory,0.15787
+tfidf_top,youth,5,pyd,0.15403
+tfidf_top,youth,6,sport,0.14703
+tfidf_top,youth,7,lgbtq,0.13692
+tfidf_top,youth,8,transition youth,0.13692
+tfidf_top,youth,9,strength,0.12282
+tfidf_top,youth,10,youth development,0.11762
+tfidf_top,youth,11,interview,0.11227
+tfidf_top,youth,12,disabilities,0.09906
+tfidf_top,youth,13,transgender,0.09413
+tfidf_top,youth,14,autistic,0.09413
+tfidf_top,youth,15,power,0.09356
+tfidf_top,youth,16,wellbeing,0.09089
+tfidf_top,youth,17,sexuality,0.08977
+tfidf_top,youth,18,pa,0.08977
+tfidf_top,youth,19,adulthood,0.08822
+tfidf_top,youth,20,foster,0.08048
+tfidf_top,youth,21,harm,0.07739
+tfidf_top,youth,22,sexual health,0.07586
+tfidf_top,youth,23,sexuality education,0.07429
+tfidf_top,youth,24,foster care,0.07274
+tfidf_top,youth,25,carers,0.07274
+tfidf_top,child/children,1,childhood,0.61609
+tfidf_top,child/children,2,early childhood,0.56741
+tfidf_top,child/children,3,childhood education,0.17255
+tfidf_top,child/children,4,young children,0.12753
+tfidf_top,child/children,5,educators,0.11492
+tfidf_top,child/children,6,father,0.09197
+tfidf_top,child/children,7,pa,0.08317
+tfidf_top,child/children,8,child development,0.07919
+tfidf_top,child/children,9,professional,0.07578
+tfidf_top,child/children,10,screen,0.07208
+tfidf_top,child/children,11,parent child,0.07023
+tfidf_top,child/children,12,preschool,0.06099
+tfidf_top,child/children,13,child care,0.05586
+tfidf_top,child/children,14,physical activity,0.05267
+tfidf_top,child/children,15,child relationships,0.05109
+tfidf_top,child/children,16,language skills,0.04854
+tfidf_top,child/children,17,wellbeing,0.04788
+tfidf_top,child/children,18,caregiver,0.04529
+tfidf_top,child/children,19,cognitive development,0.04529
+tfidf_top,child/children,20,child abuse,0.04087
+tfidf_top,child/children,21,resources,0.0399
+tfidf_top,child/children,22,nutrition,0.03881
+tfidf_top,child/children,23,social emotional,0.03831
+tfidf_top,child/children,24,income,0.03831
+tfidf_top,child/children,25,mothers,0.03671
+tfidf_top,minor,1,minors,0.70426
+tfidf_top,minor,2,leadership,0.25942
+tfidf_top,minor,3,undergraduate,0.14527
+tfidf_top,minor,4,universities,0.11366
+tfidf_top,minor,5,medical,0.11096
+tfidf_top,minor,6,catalog,0.09726
+tfidf_top,minor,7,edu,0.09726
+tfidf_top,minor,8,engineering,0.09474
+tfidf_top,minor,9,foreign,0.09352
+tfidf_top,minor,10,infractions,0.08604
+tfidf_top,minor,11,courses,0.08527
+tfidf_top,minor,12,rights,0.07946
+tfidf_top,minor,13,identity,0.07479
+tfidf_top,minor,14,majors,0.06733
+tfidf_top,minor,15,stage,0.06544
+tfidf_top,minor,16,asylum,0.06359
+tfidf_top,minor,17,personal,0.0631
+tfidf_top,minor,18,legal,0.06224
+tfidf_top,minor,19,institutions,0.06076
+tfidf_top,minor,20,refugee,0.05685
+tfidf_top,minor,21,pedagogical,0.05609
+tfidf_top,minor,22,pre,0.05142
+tfidf_top,minor,23,professional,0.04871
+tfidf_top,minor,24,illegal,0.04863
+tfidf_top,minor,25,option,0.04863
+tfidf_top,teenage,1,teenage,0.67308
+tfidf_top,teenage,2,pregnancy,0.33092
+tfidf_top,teenage,3,teenagers,0.32235
+tfidf_top,teenage,4,teenager,0.24097
+tfidf_top,teenage,5,teenage mothers,0.21955
+tfidf_top,teenage,6,mothers,0.20918
+tfidf_top,teenage,7,teen,0.07545
+tfidf_top,teenage,8,learners,0.06687
+tfidf_top,teenage,9,pregnant,0.05792
+tfidf_top,teenage,10,social media,0.05559
+tfidf_top,teenage,11,pregnancies,0.05489
+tfidf_top,teenage,12,sexual health,0.05097
+tfidf_top,teenage,13,internet,0.04972
+tfidf_top,teenage,14,sex education,0.04567
+tfidf_top,teenage,15,style,0.04567
+tfidf_top,teenage,16,sexuality,0.04567
+tfidf_top,teenage,17,character,0.04567
+tfidf_top,teenage,18,south africa,0.04391
+tfidf_top,teenage,19,bullying,0.04287
+tfidf_top,teenage,20,childbearing,0.04117
+tfidf_top,teenage,21,secondary schools,0.03772
+tfidf_top,teenage,22,descriptive,0.03772
+tfidf_top,teenage,23,museum,0.03707
+tfidf_top,teenage,24,selected,0.03601
+tfidf_top,teenage,25,marriage,0.03475
+tfidf_top,adolescent,1,adolescence,0.56643
+tfidf_top,adolescent,2,childhood,0.18272
+tfidf_top,adolescent,3,connectedness,0.14623
+tfidf_top,adolescent,4,adulthood,0.14617
+tfidf_top,adolescent,5,sexual health,0.09876
+tfidf_top,adolescent,6,adolescent health,0.09876
+tfidf_top,adolescent,7,depressive,0.09383
+tfidf_top,adolescent,8,childhood adolescence,0.0931
+tfidf_top,adolescent,9,spatial,0.0931
+tfidf_top,adolescent,10,menstrual,0.08774
+tfidf_top,adolescent,11,internalizing,0.08463
+tfidf_top,adolescent,12,depressive symptoms,0.08395
+tfidf_top,adolescent,13,adolescent mental,0.08395
+tfidf_top,adolescent,14,resources,0.0804
+tfidf_top,adolescent,15,physical activity,0.0804
+tfidf_top,adolescent,16,late adolescence,0.07901
+tfidf_top,adolescent,17,parent adolescent,0.07901
+tfidf_top,adolescent,18,late,0.07674
+tfidf_top,adolescent,19,domains,0.07617
+tfidf_top,adolescent,20,sexuality,0.07617
+tfidf_top,adolescent,21,health education,0.07309
+tfidf_top,adolescent,22,contextual,0.07309
+tfidf_top,adolescent,23,ideation,0.07019
+tfidf_top,adolescent,24,vocabulary,0.06913
+tfidf_top,adolescent,25,schoolwork,0.06434
+tfidf_top,juvenile,1,juvenile,0.8972
+tfidf_top,juvenile,2,delinquency,0.16089
+tfidf_top,juvenile,3,juvenile justice,0.1572
+tfidf_top,juvenile,4,juvenile delinquency,0.15337
+tfidf_top,juvenile,5,offenders,0.14953
+tfidf_top,juvenile,6,forest,0.07668
+tfidf_top,juvenile,7,crime,0.06935
+tfidf_top,juvenile,8,criminal,0.06798
+tfidf_top,juvenile,9,patients,0.06474
+tfidf_top,juvenile,10,punishment,0.05179
+tfidf_top,juvenile,11,character,0.04993
+tfidf_top,juvenile,12,rehabilitation,0.03884
+tfidf_top,juvenile,13,incarcerated,0.03451
+tfidf_top,juvenile,14,facilities,0.03329
+tfidf_top,juvenile,15,education program,0.03237
+tfidf_top,juvenile,16,character education,0.03051
+tfidf_top,juvenile,17,disabilities,0.02774
+tfidf_top,juvenile,18,temperament,0.02684
+tfidf_top,juvenile,19,incarceration,0.02684
+tfidf_top,juvenile,20,grade retention,0.02684
+tfidf_top,juvenile,21,returning,0.02684
+tfidf_top,juvenile,22,residential,0.02684
+tfidf_top,juvenile,23,offending,0.02684
+tfidf_top,juvenile,24,cyber,0.02684
+tfidf_top,juvenile,25,special education,0.0259

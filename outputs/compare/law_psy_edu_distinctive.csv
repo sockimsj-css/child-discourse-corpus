@@ -1,0 +1,361 @@
+sheet,group,rank,term,this_group,others_avg,diff,field
+distinctive,child/children,1,aces,0.23244,0.01312,0.21931,law
+distinctive,child/children,2,csa,0.17974,0.00524,0.1745,law
+distinctive,child/children,3,children rights,0.18203,0.00871,0.17332,law
+distinctive,child/children,4,child protection,0.17171,0.01433,0.15738,law
+distinctive,child/children,5,child abuse,0.1185,0.00724,0.11126,law
+distinctive,child/children,6,rights child,0.11125,0.01093,0.10032,law
+distinctive,child/children,7,child marriage,0.10064,0.00126,0.09938,law
+distinctive,child/children,8,crc,0.10131,0.00212,0.09919,law
+distinctive,child/children,9,child sexual,0.11125,0.01251,0.09874,law
+distinctive,child/children,10,maltreatment,0.11202,0.01845,0.09356,law
+distinctive,child/children,11,child welfare,0.10784,0.02428,0.08357,law
+distinctive,child/children,12,early childhood,0.08824,0.00638,0.08185,law
+distinctive,child/children,13,violence,0.16203,0.08035,0.08168,law
+distinctive,child/children,14,methamphetamine,0.08129,0.00086,0.08043,law
+distinctive,child/children,15,adversity,0.08129,0.00258,0.07871,law
+distinctive,child/children,16,convention rights,0.08706,0.00838,0.07868,law
+distinctive,child/children,17,marriage,0.11482,0.03785,0.07697,law
+distinctive,child/children,18,childhood experiences,0.07981,0.00502,0.07479,law
+distinctive,child/children,19,poverty,0.0719,0.00379,0.0681,law
+distinctive,child/children,20,csec,0.06967,0.00297,0.06671,law
+distinctive,youth,1,police,0.29539,0.06432,0.23107,law
+distinctive,youth,2,young adults,0.21772,0.00386,0.21386,law
+distinctive,youth,3,youth justice,0.19901,0.01596,0.18305,law
+distinctive,youth,4,young adult,0.15966,0.00171,0.15795,law
+distinctive,youth,5,children young,0.14878,0.00821,0.14057,law
+distinctive,youth,6,diversion,0.1306,0.00587,0.12473,law
+distinctive,youth,7,suicide,0.10741,0.01671,0.0907,law
+distinctive,youth,8,child welfare,0.10886,0.02407,0.08479,law
+distinctive,youth,9,justice systems,0.09435,0.01047,0.08388,law
+distinctive,youth,10,cigarette,0.08346,0.00651,0.07695,law
+distinctive,youth,11,wales,0.0762,0.00408,0.07212,law
+distinctive,youth,12,risk youth,0.06877,0.00125,0.06752,law
+distinctive,youth,13,perceptions,0.07788,0.01079,0.06709,law
+distinctive,youth,14,legal cynicism,0.07307,0.00751,0.06555,law
+distinctive,youth,15,cynicism,0.07307,0.00751,0.06555,law
+distinctive,youth,16,youth offenders,0.06841,0.00478,0.06363,law
+distinctive,youth,17,firearm,0.09018,0.02898,0.0612,law
+distinctive,youth,18,youth youth,0.06017,0.00077,0.0594,law
+distinctive,youth,19,harm,0.08056,0.02234,0.05822,law
+distinctive,youth,20,eviction,0.06017,0.00387,0.0563,law
+distinctive,adolescent,1,consent,0.27383,0.04718,0.22666,law
+distinctive,adolescent,2,marijuana,0.21743,0.02187,0.19556,law
+distinctive,adolescent,3,contraception,0.12158,0.00485,0.11673,law
+distinctive,adolescent,4,adulthood,0.14042,0.0287,0.11173,law
+distinctive,adolescent,5,confidentiality,0.10419,0.0081,0.09608,law
+distinctive,adolescent,6,confidential,0.10044,0.00524,0.0952,law
+distinctive,adolescent,7,abortion,0.11325,0.02081,0.09244,law
+distinctive,adolescent,8,access,0.14474,0.05303,0.09171,law
+distinctive,adolescent,9,ethical,0.10953,0.02148,0.08805,law
+distinctive,adolescent,10,pregnancy,0.11778,0.03184,0.08593,law
+distinctive,adolescent,11,medical,0.12909,0.05043,0.07866,law
+distinctive,adolescent,12,legal socialization,0.0814,0.00344,0.07796,law
+distinctive,adolescent,13,violence,0.15648,0.08146,0.07502,law
+distinctive,adolescent,14,health information,0.07513,0.00297,0.07217,law
+distinctive,adolescent,15,assault,0.08154,0.01007,0.07147,law
+distinctive,adolescent,16,developmental,0.09389,0.02402,0.06987,law
+distinctive,adolescent,17,sexual assault,0.07701,0.00764,0.06937,law
+distinctive,adolescent,18,adolescent health,0.06887,0.00077,0.0681,law
+distinctive,adolescent,19,adolescent offenders,0.06887,0.00086,0.06801,law
+distinctive,adolescent,20,legitimacy,0.07248,0.00514,0.06734,law
+distinctive,minor,1,minors,0.67956,0.0298,0.64977,law
+distinctive,minor,2,dmst,0.14338,0.00232,0.14105,law
+distinctive,minor,3,trafficking,0.15754,0.02906,0.12847,law
+distinctive,minor,4,sex trafficking,0.11866,0.00387,0.11479,law
+distinctive,minor,5,unaccompanied,0.10018,0.00399,0.09618,law
+distinctive,minor,6,minor sex,0.06922,0.00077,0.06844,law
+distinctive,minor,7,abortions,0.06922,0.00125,0.06796,law
+distinctive,minor,8,unaccompanied minors,0.06922,0.00155,0.06767,law
+distinctive,minor,9,ends,0.07096,0.00341,0.06755,law
+distinctive,minor,10,online,0.09658,0.03213,0.06445,law
+distinctive,minor,11,patients,0.07722,0.01823,0.05899,law
+distinctive,minor,12,disciplinary,0.06261,0.00399,0.05862,law
+distinctive,minor,13,sextortion,0.05933,0.00077,0.05855,law
+distinctive,minor,14,cigarettes,0.06261,0.00429,0.05832,law
+distinctive,minor,15,consent,0.13282,0.07538,0.05745,law
+distinctive,minor,16,jurisprudence,0.06796,0.01077,0.05718,law
+distinctive,minor,17,hiv,0.06081,0.00979,0.05101,law
+distinctive,minor,18,testing,0.05723,0.00705,0.05018,law
+distinctive,minor,19,domestic minor,0.04592,0.00138,0.04454,law
+distinctive,minor,20,contracts,0.04944,0.00503,0.04441,law
+distinctive,teenage,1,teenage,0.52286,0.00903,0.51384,law
+distinctive,teenage,2,education,0.20417,0.04498,0.15919,law
+distinctive,teenage,3,pregnant,0.13264,0.00568,0.12697,law
+distinctive,teenage,4,pregnancy,0.15004,0.02539,0.12465,law
+distinctive,teenage,5,sexual harassment,0.11673,0.00356,0.11317,law
+distinctive,teenage,6,harassment,0.10912,0.00367,0.10545,law
+distinctive,teenage,7,teenage pregnancy,0.10055,0.00125,0.0993,law
+distinctive,teenage,8,muslim,0.0817,0.00086,0.08084,law
+distinctive,teenage,9,marriage,0.11367,0.03808,0.07558,law
+distinctive,teenage,10,city,0.07853,0.00641,0.07212,law
+distinctive,teenage,11,emotional,0.09816,0.02613,0.07203,law
+distinctive,teenage,12,workers,0.08245,0.01457,0.06788,law
+distinctive,teenage,13,gambling,0.06913,0.00396,0.06517,law
+distinctive,teenage,14,perpetrators,0.07275,0.00843,0.06432,law
+distinctive,teenage,15,pregnancies,0.06913,0.00626,0.06287,law
+distinctive,teenage,16,early marriage,0.06897,0.00659,0.06238,law
+distinctive,teenage,17,teenage pregnancies,0.06284,0.00125,0.06159,law
+distinctive,teenage,18,online gambling,0.06284,0.00297,0.05988,law
+distinctive,teenage,19,creative,0.05836,0.00149,0.05687,law
+distinctive,teenage,20,teachers,0.05836,0.00298,0.05539,law
+distinctive,juvenile,1,juvenile offenders,0.38515,0.00513,0.38002,law
+distinctive,juvenile,2,recidivism,0.27321,0.0369,0.23631,law
+distinctive,juvenile,3,juvenile delinquency,0.21382,0.00733,0.20648,law
+distinctive,juvenile,4,behavioral health,0.14447,0.00552,0.13895,law
+distinctive,juvenile,5,juvenile court,0.11879,0.0091,0.10969,law
+distinctive,juvenile,6,subgroups,0.11879,0.0101,0.10869,law
+distinctive,juvenile,7,adjudication,0.09631,0.00211,0.09421,law
+distinctive,juvenile,8,delinquency prevention,0.09506,0.00086,0.0942,law
+distinctive,juvenile,9,jj,0.09506,0.00172,0.09335,law
+distinctive,juvenile,10,health problems,0.09629,0.01546,0.08083,law
+distinctive,juvenile,11,health disorders,0.08253,0.00314,0.07939,law
+distinctive,juvenile,12,race,0.09503,0.01879,0.07624,law
+distinctive,juvenile,13,female juvenile,0.07605,0.00086,0.07519,law
+distinctive,juvenile,14,juvenile probation,0.07605,0.00086,0.07519,law
+distinctive,juvenile,15,multidimensional,0.07605,0.00125,0.0748,law
+distinctive,juvenile,16,secure,0.08253,0.00785,0.07469,law
+distinctive,juvenile,17,ptsd,0.07605,0.0031,0.07296,law
+distinctive,juvenile,18,strategy,0.08253,0.00996,0.07257,law
+distinctive,juvenile,19,probation,0.09503,0.02259,0.07244,law
+distinctive,juvenile,20,trauma informed,0.08315,0.01611,0.06704,law
+distinctive,youth,1,climate,0.18313,0.00291,0.18022,psychology
+distinctive,youth,2,young adult,0.18275,0.00861,0.17414,psychology
+distinctive,youth,3,young adults,0.17321,0.00847,0.16475,psychology
+distinctive,youth,4,transgender,0.17113,0.00769,0.16344,psychology
+distinctive,youth,5,media,0.19705,0.05614,0.14091,psychology
+distinctive,youth,6,social media,0.16845,0.03,0.13844,psychology
+distinctive,youth,7,digital,0.13985,0.01691,0.12294,psychology
+distinctive,youth,8,harm,0.12554,0.01077,0.11477,psychology
+distinctive,youth,9,help seeking,0.11811,0.00475,0.11336,psychology
+distinctive,youth,10,online,0.15097,0.04558,0.10538,psychology
+distinctive,youth,11,self harm,0.11811,0.01296,0.10515,psychology
+distinctive,youth,12,children young,0.10489,0.00533,0.09956,psychology
+distinctive,youth,13,sexual minority,0.09157,0.00073,0.09084,psychology
+distinctive,youth,14,identity,0.10011,0.01883,0.08128,psychology
+distinctive,youth,15,autistic,0.08375,0.00324,0.08051,psychology
+distinctive,youth,16,adhd,0.09694,0.0174,0.07954,psychology
+distinctive,youth,17,background,0.10965,0.0309,0.07875,psychology
+distinctive,youth,18,smartphone,0.07885,0.00168,0.07717,psychology
+distinctive,youth,19,minority,0.07946,0.00434,0.07512,psychology
+distinctive,youth,20,loneliness,0.09017,0.01575,0.07441,psychology
+distinctive,child/children,1,asd,0.40903,0.01186,0.39716,psychology
+distinctive,child/children,2,maltreatment,0.30675,0.00745,0.2993,psychology
+distinctive,child/children,3,childhood trauma,0.17556,0.00051,0.17505,psychology
+distinctive,child/children,4,childhood adversity,0.17258,0.00051,0.17208,psychology
+distinctive,child/children,5,adversity,0.17289,0.00706,0.16583,psychology
+distinctive,child/children,6,children aged,0.16329,0.00104,0.16225,psychology
+distinctive,child/children,7,aces,0.17837,0.0257,0.15267,psychology
+distinctive,child/children,8,childhood maltreatment,0.15073,0.00192,0.14881,psychology
+distinctive,child/children,9,trauma,0.15802,0.04435,0.11367,psychology
+distinctive,child/children,10,pandemic,0.13347,0.03145,0.10202,psychology
+distinctive,child/children,11,parenting,0.12828,0.02885,0.09942,psychology
+distinctive,child/children,12,children asd,0.09522,0.00051,0.09471,psychology
+distinctive,child/children,13,covid 19,0.12917,0.03455,0.09461,psychology
+distinctive,child/children,14,covid,0.12917,0.03508,0.09409,psychology
+distinctive,child/children,15,neglect,0.0911,0.01219,0.07891,psychology
+distinctive,child/children,16,surveillance,0.08034,0.00356,0.07678,psychology
+distinctive,child/children,17,diagnosis,0.08826,0.01536,0.0729,psychology
+distinctive,child/children,18,health children,0.07439,0.00305,0.07134,psychology
+distinctive,child/children,19,hispanic,0.0818,0.01123,0.07057,psychology
+distinctive,child/children,20,obesity,0.08039,0.01074,0.06965,psychology
+distinctive,adolescent,1,sleep,0.16697,0.02314,0.14383,psychology
+distinctive,adolescent,2,emotion,0.16363,0.02026,0.14337,psychology
+distinctive,adolescent,3,bullying,0.16241,0.0223,0.14011,psychology
+distinctive,adolescent,4,maturation,0.11987,0.00275,0.11712,psychology
+distinctive,adolescent,5,processes,0.13023,0.01863,0.11161,psychology
+distinctive,adolescent,6,adolescent depression,0.11224,0.00119,0.11105,psychology
+distinctive,adolescent,7,parent adolescent,0.1083,0.00176,0.10654,psychology
+distinctive,adolescent,8,late,0.11354,0.01048,0.10305,psychology
+distinctive,adolescent,9,alcohol,0.12022,0.02208,0.09813,psychology
+distinctive,adolescent,10,mdd,0.10379,0.00626,0.09752,psychology
+distinctive,adolescent,11,emotion regulation,0.10686,0.01409,0.09277,psychology
+distinctive,adolescent,12,early adolescence,0.0928,0.0012,0.0916,psychology
+distinctive,adolescent,13,late adolescence,0.0928,0.0013,0.0915,psychology
+distinctive,adolescent,14,perpetration,0.09476,0.00502,0.08975,psychology
+distinctive,adolescent,15,depressive symptoms,0.10352,0.01432,0.0892,psychology
+distinctive,adolescent,16,cognitive control,0.09086,0.00179,0.08908,psychology
+distinctive,adolescent,17,reward,0.0928,0.00544,0.08736,psychology
+distinctive,adolescent,18,prosocial,0.08574,0.0009,0.08483,psychology
+distinctive,adolescent,19,media,0.15027,0.06549,0.08478,psychology
+distinctive,adolescent,20,ef,0.09086,0.00833,0.08253,psychology
+distinctive,teenage,1,teenage,0.69384,0.00451,0.68932,psychology
+distinctive,teenage,2,teenager,0.29594,0.00231,0.29363,psychology
+distinctive,teenage,3,pregnancy,0.29258,0.00727,0.28531,psychology
+distinctive,teenage,4,teenagers,0.2593,0.006,0.2533,psychology
+distinctive,teenage,5,teenage mothers,0.14582,0.00051,0.14531,psychology
+distinctive,teenage,6,mothers,0.16118,0.01895,0.14223,psychology
+distinctive,teenage,7,driving,0.11767,0.00581,0.11186,psychology
+distinctive,teenage,8,pregnant,0.11127,0.00212,0.10915,psychology
+distinctive,teenage,9,childbearing,0.0645,0.00218,0.06231,psychology
+distinctive,teenage,10,marriage,0.06392,0.00303,0.06089,psychology
+distinctive,teenage,11,teenage childbearing,0.05608,0.00073,0.05536,psychology
+distinctive,teenage,12,contraceptive,0.05048,0.00214,0.04834,psychology
+distinctive,teenage,13,teens,0.04498,0.00314,0.04185,psychology
+distinctive,teenage,14,accepting,0.04206,0.00051,0.04155,psychology
+distinctive,teenage,15,reproductive,0.04463,0.00318,0.04146,psychology
+distinctive,teenage,16,women,0.06307,0.02196,0.04111,psychology
+distinctive,teenage,17,feedback,0.04261,0.00219,0.04042,psychology
+distinctive,teenage,18,marketing,0.04498,0.00477,0.04021,psychology
+distinctive,teenage,19,mobile phone,0.03926,0.00102,0.03824,psychology
+distinctive,teenage,20,drivers,0.03855,0.00194,0.03661,psychology
+distinctive,minor,1,minors,0.64466,0.00161,0.64305,psychology
+distinctive,minor,2,minor,0.421,0.00195,0.41905,psychology
+distinctive,minor,3,refugee,0.25823,0.00051,0.25772,psychology
+distinctive,minor,4,unaccompanied,0.24565,0.00179,0.24386,psychology
+distinctive,minor,5,ptsd,0.14735,0.02453,0.12282,psychology
+distinctive,minor,6,minor depression,0.10547,0.00112,0.10435,psychology
+distinctive,minor,7,traumatic,0.07726,0.01599,0.06127,psychology
+distinctive,minor,8,host,0.05092,0.0006,0.05032,psychology
+distinctive,minor,9,shame,0.05092,0.00102,0.0499,psychology
+distinctive,minor,10,guilt,0.05092,0.00153,0.04939,psychology
+distinctive,minor,11,cbt,0.04913,0.00472,0.04441,psychology
+distinctive,minor,12,migration,0.04606,0.00179,0.04427,psychology
+distinctive,minor,13,online,0.09998,0.05578,0.0442,psychology
+distinctive,minor,14,testing,0.04999,0.00607,0.04392,psychology
+distinctive,minor,15,speech,0.04606,0.0039,0.04216,psychology
+distinctive,minor,16,laws,0.04606,0.00449,0.04157,psychology
+distinctive,minor,17,arm,0.04299,0.00149,0.0415,psychology
+distinctive,minor,18,mode,0.04299,0.00196,0.04102,psychology
+distinctive,minor,19,workers,0.04317,0.00408,0.03909,psychology
+distinctive,minor,20,trafficking,0.04001,0.00102,0.03899,psychology
+distinctive,juvenile,1,juvenile,0.73095,0.00607,0.72488,psychology
+distinctive,juvenile,2,justice,0.35369,0.01037,0.34332,psychology
+distinctive,juvenile,3,juvenile justice,0.34585,0.00277,0.34308,psychology
+distinctive,juvenile,4,offenders,0.25789,0.00145,0.25644,psychology
+distinctive,juvenile,5,mice,0.08497,0.00315,0.08181,psychology
+distinctive,juvenile,6,delinquency,0.08646,0.00505,0.0814,psychology
+distinctive,juvenile,7,juvenile delinquency,0.07548,0.00145,0.07403,psychology
+distinctive,juvenile,8,behavioral health,0.06919,0.00179,0.0674,psychology
+distinctive,juvenile,9,arrest,0.0629,0.00145,0.06145,psychology
+distinctive,juvenile,10,restraint,0.05661,0.00102,0.05559,psychology
+distinctive,juvenile,11,offending,0.05006,0.00342,0.04663,psychology
+distinctive,juvenile,12,violent,0.05006,0.00536,0.04469,psychology
+distinctive,juvenile,13,frontal,0.04779,0.00331,0.04448,psychology
+distinctive,juvenile,14,trauma,0.09825,0.0563,0.04194,psychology
+distinctive,juvenile,15,incarcerated,0.04403,0.00238,0.04165,psychology
+distinctive,juvenile,16,sociability,0.03774,0.00051,0.03723,psychology
+distinctive,juvenile,17,juvenile court,0.03774,0.00051,0.03723,psychology
+distinctive,juvenile,18,gang,0.03774,0.00056,0.03718,psychology
+distinctive,juvenile,19,cascade,0.03774,0.00056,0.03718,psychology
+distinctive,juvenile,20,lateral,0.03774,0.0006,0.03714,psychology
+distinctive,youth,1,young adults,0.20584,0.00267,0.20317,education
+distinctive,youth,2,children young,0.17025,0.00409,0.16616,education
+distinctive,youth,3,participatory,0.15787,0.00417,0.1537,education
+distinctive,youth,4,pyd,0.15403,0.00351,0.15052,education
+distinctive,youth,5,transition youth,0.13692,0.00077,0.13615,education
+distinctive,youth,6,lgbtq,0.13692,0.00117,0.13575,education
+distinctive,youth,7,sport,0.14703,0.01319,0.13384,education
+distinctive,youth,8,physical activity,0.16039,0.03141,0.12898,education
+distinctive,youth,9,strength,0.12282,0.00481,0.11801,education
+distinctive,youth,10,youth development,0.11762,0.00771,0.10991,education
+distinctive,youth,11,interview,0.11227,0.00731,0.10497,education
+distinctive,youth,12,autistic,0.09413,0.00055,0.09358,education
+distinctive,youth,13,transgender,0.09413,0.00117,0.09296,education
+distinctive,youth,14,disabilities,0.09906,0.00872,0.09034,education
+distinctive,youth,15,power,0.09356,0.00613,0.08743,education
+distinctive,youth,16,wellbeing,0.09089,0.01506,0.07583,education
+distinctive,youth,17,foster,0.08048,0.00868,0.07181,education
+distinctive,youth,18,lgbtq youth,0.07274,0.00117,0.07157,education
+distinctive,youth,19,carers,0.07274,0.00165,0.07109,education
+distinctive,youth,20,foster care,0.07274,0.00224,0.07049,education
+distinctive,child/children,1,childhood,0.61609,0.05309,0.563,education
+distinctive,child/children,2,early childhood,0.56741,0.00979,0.55762,education
+distinctive,child/children,3,childhood education,0.17255,0.00295,0.1696,education
+distinctive,child/children,4,young children,0.12753,0.00536,0.12217,education
+distinctive,child/children,5,educators,0.11492,0.01888,0.09604,education
+distinctive,child/children,6,father,0.09197,0.00055,0.09142,education
+distinctive,child/children,7,child development,0.07919,0.00075,0.07845,education
+distinctive,child/children,8,screen,0.07208,0.00682,0.06527,education
+distinctive,child/children,9,parent child,0.07023,0.00796,0.06227,education
+distinctive,child/children,10,preschool,0.06099,0.00178,0.05921,education
+distinctive,child/children,11,professional,0.07578,0.0204,0.05538,education
+distinctive,child/children,12,child care,0.05586,0.00208,0.05379,education
+distinctive,child/children,13,pa,0.08317,0.03034,0.05283,education
+distinctive,child/children,14,child relationships,0.05109,0.00086,0.05024,education
+distinctive,child/children,15,language skills,0.04854,0.00117,0.04737,education
+distinctive,child/children,16,caregiver,0.04529,0.00135,0.04394,education
+distinctive,child/children,17,cognitive development,0.04529,0.00423,0.04107,education
+distinctive,child/children,18,child abuse,0.04087,0.00257,0.03831,education
+distinctive,child/children,19,dyads,0.03577,0.00086,0.03491,education
+distinctive,child/children,20,emotional development,0.03451,0.00243,0.03208,education
+distinctive,minor,1,minors,0.70426,0.00266,0.7016,education
+distinctive,minor,2,leadership,0.25942,0.0037,0.25571,education
+distinctive,minor,3,undergraduate,0.14527,0.00354,0.14174,education
+distinctive,minor,4,universities,0.11366,0.00274,0.11092,education
+distinctive,minor,5,medical,0.11096,0.00951,0.10145,education
+distinctive,minor,6,edu,0.09726,0.00051,0.09675,education
+distinctive,minor,7,catalog,0.09726,0.00077,0.09649,education
+distinctive,minor,8,foreign,0.09352,0.00051,0.09301,education
+distinctive,minor,9,engineering,0.09474,0.0036,0.09114,education
+distinctive,minor,10,infractions,0.08604,0.00153,0.0845,education
+distinctive,minor,11,courses,0.08527,0.0033,0.08197,education
+distinctive,minor,12,rights,0.07946,0.01142,0.06804,education
+distinctive,minor,13,majors,0.06733,0.00055,0.06678,education
+distinctive,minor,14,asylum,0.06359,0.00102,0.06257,education
+distinctive,minor,15,legal,0.06224,0.00417,0.05807,education
+distinctive,minor,16,refugee,0.05685,0.00274,0.05411,education
+distinctive,minor,17,stage,0.06544,0.01266,0.05278,education
+distinctive,minor,18,identity,0.07479,0.02252,0.05227,education
+distinctive,minor,19,institutions,0.06076,0.0098,0.05096,education
+distinctive,minor,20,pedagogical,0.05609,0.00794,0.04815,education
+distinctive,teenage,1,teenage,0.67308,0.00583,0.66725,education
+distinctive,teenage,2,pregnancy,0.33092,0.00776,0.32316,education
+distinctive,teenage,3,teenagers,0.32235,0.00698,0.31537,education
+distinctive,teenage,4,teenager,0.24097,0.00115,0.23981,education
+distinctive,teenage,5,teenage mothers,0.21955,0.00086,0.21869,education
+distinctive,teenage,6,mothers,0.20918,0.01908,0.19011,education
+distinctive,teenage,7,teen,0.07545,0.00539,0.07006,education
+distinctive,teenage,8,learners,0.06687,0.00474,0.06213,education
+distinctive,teenage,9,pregnant,0.05792,0.00106,0.05686,education
+distinctive,teenage,10,pregnancies,0.05489,0.00117,0.05372,education
+distinctive,teenage,11,south africa,0.04391,0.00171,0.0422,education
+distinctive,teenage,12,style,0.04567,0.00486,0.04081,education
+distinctive,teenage,13,childbearing,0.04117,0.00234,0.03883,education
+distinctive,teenage,14,social media,0.05559,0.01897,0.03663,education
+distinctive,teenage,15,museum,0.03707,0.00236,0.03471,education
+distinctive,teenage,16,internet,0.04972,0.01649,0.03324,education
+distinctive,teenage,17,high myopia,0.03293,0.00086,0.03208,education
+distinctive,teenage,18,county,0.03375,0.0025,0.03126,education
+distinctive,teenage,19,marriage,0.03475,0.00359,0.03116,education
+distinctive,teenage,20,province,0.03244,0.00128,0.03116,education
+distinctive,adolescent,1,adolescence,0.56643,0.01676,0.54967,education
+distinctive,adolescent,2,connectedness,0.14623,0.00171,0.14452,education
+distinctive,adolescent,3,adulthood,0.14617,0.02287,0.1233,education
+distinctive,adolescent,4,adolescent health,0.09876,0.00424,0.09452,education
+distinctive,adolescent,5,spatial,0.0931,0.00326,0.08984,education
+distinctive,adolescent,6,childhood adolescence,0.0931,0.00475,0.08835,education
+distinctive,adolescent,7,depressive,0.09383,0.00662,0.0872,education
+distinctive,adolescent,8,menstrual,0.08774,0.00055,0.08719,education
+distinctive,adolescent,9,adolescent mental,0.08395,0.00106,0.08289,education
+distinctive,adolescent,10,internalizing,0.08463,0.00641,0.07822,education
+distinctive,adolescent,11,parent adolescent,0.07901,0.00119,0.07783,education
+distinctive,adolescent,12,depressive symptoms,0.08395,0.00619,0.07776,education
+distinctive,adolescent,13,late adolescence,0.07901,0.00335,0.07566,education
+distinctive,adolescent,14,sexual health,0.09876,0.02537,0.0734,education
+distinctive,adolescent,15,domains,0.07617,0.01026,0.06591,education
+distinctive,adolescent,16,ideation,0.07019,0.00428,0.06591,education
+distinctive,adolescent,17,late,0.07674,0.01099,0.06575,education
+distinctive,adolescent,18,contextual,0.07309,0.00801,0.06507,education
+distinctive,adolescent,19,schoolwork,0.06434,0.00055,0.06379,education
+distinctive,adolescent,20,reasoning,0.06434,0.00102,0.06332,education
+distinctive,juvenile,1,juvenile,0.8972,0.00374,0.89346,education
+distinctive,juvenile,2,juvenile justice,0.1572,0.00075,0.15645,education
+distinctive,juvenile,3,delinquency,0.16089,0.00677,0.15412,education
+distinctive,juvenile,4,juvenile delinquency,0.15337,0.00224,0.15112,education
+distinctive,juvenile,5,offenders,0.14953,0.00055,0.14899,education
+distinctive,juvenile,6,forest,0.07668,0.00428,0.07241,education
+distinctive,juvenile,7,crime,0.06935,0.00323,0.06612,education
+distinctive,juvenile,8,criminal,0.06798,0.00339,0.06459,education
+distinctive,juvenile,9,patients,0.06474,0.01246,0.05229,education
+distinctive,juvenile,10,punishment,0.05179,0.00236,0.04944,education
+distinctive,juvenile,11,character,0.04993,0.01494,0.03499,education
+distinctive,juvenile,12,incarcerated,0.03451,0.00204,0.03246,education
+distinctive,juvenile,13,rehabilitation,0.03884,0.00738,0.03146,education
+distinctive,juvenile,14,education program,0.03237,0.0011,0.03128,education
+distinctive,juvenile,15,facilities,0.03329,0.00531,0.02798,education
+distinctive,juvenile,16,temperament,0.02684,0.00051,0.02633,education
+distinctive,juvenile,17,residential,0.02684,0.00075,0.02609,education
+distinctive,juvenile,18,grade retention,0.02684,0.00102,0.02582,education
+distinctive,juvenile,19,returning,0.02684,0.0011,0.02574,education
+distinctive,juvenile,20,offending,0.02684,0.00117,0.02567,education
