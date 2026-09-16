@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1>Co-occurrence: EDUCATION / "youth" (243 papers)</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1>Co-occurrence: EDUCATION / "youth" (243 papers)</h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "activity", "label": "activity", "shape": "dot", "size": 25.873015873015873, "title": "activity\nfreq: 80\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "physical", "label": "physical", "shape": "dot", "size": 31.626984126984127, "title": "physical\nfreq: 109\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "health", "label": "health", "shape": "dot", "size": 60.0, "title": "health\nfreq: 252\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "mental", "label": "mental", "shape": "dot", "size": 20.317460317460316, "title": "mental\nfreq: 52\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "education", "label": "education", "shape": "dot", "size": 53.452380952380956, "title": "education\nfreq: 219\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "social", "label": "social", "shape": "dot", "size": 46.30952380952381, "title": "social\nfreq: 183\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "high", "label": "high", "shape": "dot", "size": 20.317460317460316, "title": "high\nfreq: 52\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "school", "label": "school", "shape": "dot", "size": 52.65873015873016, "title": "school\nfreq: 215\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "educational", "label": "educational", "shape": "dot", "size": 34.404761904761905, "title": "educational\nfreq: 123\ncommunity: 4"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "adult", "label": "adult", "shape": "dot", "size": 45.317460317460316, "title": "adult\nfreq: 178\ncommunity: 6"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "media", "label": "media", "shape": "dot", "size": 17.738095238095237, "title": "media\nfreq: 39\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "support", "label": "support", "shape": "dot", "size": 32.420634920634924, "title": "support\nfreq: 113\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "sex", "label": "sex", "shape": "dot", "size": 20.11904761904762, "title": "sex\nfreq: 51\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "sexuality", "label": "sexuality", "shape": "dot", "size": 15.753968253968253, "title": "sexuality\nfreq: 29\ncommunity: 0"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "development", "label": "development", "shape": "dot", "size": 38.17460317460318, "title": "development\nfreq: 142\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "programs", "label": "programs", "shape": "dot", "size": 26.071428571428573, "title": "programs\nfreq: 81\ncommunity: 2"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "training", "label": "training", "shape": "dot", "size": 27.857142857142858, "title": "training\nfreq: 90\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "transition", "label": "transition", "shape": "dot", "size": 24.484126984126988, "title": "transition\nfreq: 73\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "evidence", "label": "evidence", "shape": "dot", "size": 24.682539682539684, "title": "evidence\nfreq: 74\ncommunity: 1"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "students", "label": "students", "shape": "dot", "size": 25.07936507936508, "title": "students\nfreq: 76\ncommunity: 6"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "sexual", "label": "sexual", "shape": "dot", "size": 22.8968253968254, "title": "sexual\nfreq: 65\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "interview", "label": "interview", "shape": "dot", "size": 18.333333333333332, "title": "interview\nfreq: 42\ncommunity: 0"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "employment", "label": "employment", "shape": "dot", "size": 18.53174603174603, "title": "employment\nfreq: 43\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "promotion", "label": "promotion", "shape": "dot", "size": 15.753968253968253, "title": "promotion\nfreq: 29\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "life", "label": "life", "shape": "dot", "size": 24.682539682539684, "title": "life\nfreq: 74\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "skills", "label": "skills", "shape": "dot", "size": 22.698412698412696, "title": "skills\nfreq: 64\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "interventions", "label": "interventions", "shape": "dot", "size": 24.484126984126988, "title": "interventions\nfreq: 73\ncommunity: 1"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "action", "label": "action", "shape": "dot", "size": 16.547619047619047, "title": "action\nfreq: 33\ncommunity: 3"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "participatory", "label": "participatory", "shape": "dot", "size": 20.11904761904762, "title": "participatory\nfreq: 51\ncommunity: 3"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "adults", "label": "adults", "shape": "dot", "size": 31.03174603174603, "title": "adults\nfreq: 106\ncommunity: 6"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "services", "label": "services", "shape": "dot", "size": 21.11111111111111, "title": "services\nfreq: 56\ncommunity: 6"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "secondary", "label": "secondary", "shape": "dot", "size": 16.746031746031747, "title": "secondary\nfreq: 34\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "experiences", "label": "experiences", "shape": "dot", "size": 25.476190476190474, "title": "experiences\nfreq: 78\ncommunity: 4"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "strength", "label": "strength", "shape": "dot", "size": 16.746031746031747, "title": "strength\nfreq: 34\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "challenges", "label": "challenges", "shape": "dot", "size": 19.72222222222222, "title": "challenges\nfreq: 49\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "benefits", "label": "benefits", "shape": "dot", "size": 16.944444444444443, "title": "benefits\nfreq: 35\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "emotional", "label": "emotional", "shape": "dot", "size": 17.142857142857142, "title": "emotional\nfreq: 36\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "participation", "label": "participation", "shape": "dot", "size": 26.26984126984127, "title": "participation\nfreq: 82\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "sports", "label": "sports", "shape": "dot", "size": 17.539682539682538, "title": "sports\nfreq: 38\ncommunity: 2"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "wellbeing", "label": "wellbeing", "shape": "dot", "size": 16.746031746031747, "title": "wellbeing\nfreq: 34\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "academic", "label": "academic", "shape": "dot", "size": 19.126984126984127, "title": "academic\nfreq: 46\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "sport", "label": "sport", "shape": "dot", "size": 20.91269841269841, "title": "sport\nfreq: 55\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "settings", "label": "settings", "shape": "dot", "size": 17.341269841269842, "title": "settings\nfreq: 37\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "digital", "label": "digital", "shape": "dot", "size": 16.349206349206348, "title": "digital\nfreq: 32\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "schools", "label": "schools", "shape": "dot", "size": 23.492063492063494, "title": "schools\nfreq: 68\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "knowledge", "label": "knowledge", "shape": "dot", "size": 21.11111111111111, "title": "knowledge\nfreq: 56\ncommunity: 1"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "intervention", "label": "intervention", "shape": "dot", "size": 19.72222222222222, "title": "intervention\nfreq: 49\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "gender", "label": "gender", "shape": "dot", "size": 17.142857142857142, "title": "gender\nfreq: 36\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "pyd", "label": "pyd", "shape": "dot", "size": 17.142857142857142, "title": "pyd\nfreq: 36\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "community", "label": "community", "shape": "dot", "size": 23.095238095238095, "title": "community\nfreq: 66\ncommunity: 2"}, {"color": "#FFD93D", "font": {"color": "#333333"}, "id": "approaches", "label": "approaches", "shape": "dot", "size": 17.142857142857142, "title": "approaches\nfreq: 36\ncommunity: 3"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "while", "label": "while", "shape": "dot", "size": 18.333333333333332, "title": "while\nfreq: 42\ncommunity: 4"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "power", "label": "power", "shape": "dot", "size": 16.944444444444443, "title": "power\nfreq: 35\ncommunity: 0"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "care", "label": "care", "shape": "dot", "size": 22.5, "title": "care\nfreq: 63\ncommunity: 6"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "focus", "label": "focus", "shape": "dot", "size": 19.92063492063492, "title": "focus\nfreq: 50\ncommunity: 5"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "interviews", "label": "interviews", "shape": "dot", "size": 19.325396825396826, "title": "interviews\nfreq: 47\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "recommendations", "label": "recommendations", "shape": "dot", "size": 16.746031746031747, "title": "recommendations\nfreq: 34\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "quality", "label": "quality", "shape": "dot", "size": 17.738095238095237, "title": "quality\nfreq: 39\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "lgbtq", "label": "lgbtq", "shape": "dot", "size": 16.349206349206348, "title": "lgbtq\nfreq: 32\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "self", "label": "self", "shape": "dot", "size": 24.88095238095238, "title": "self\nfreq: 75\ncommunity: 4"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "disabilities", "label": "disabilities", "shape": "dot", "size": 16.349206349206348, "title": "disabilities\nfreq: 32\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "learning", "label": "learning", "shape": "dot", "size": 22.5, "title": "learning\nfreq: 63\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "teachers", "label": "teachers", "shape": "dot", "size": 17.738095238095237, "title": "teachers\nfreq: 39\ncommunity: 4"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "systematic", "label": "systematic", "shape": "dot", "size": 16.150793650793652, "title": "systematic\nfreq: 31\ncommunity: 1"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "aged", "label": "aged", "shape": "dot", "size": 18.134920634920633, "title": "aged\nfreq: 41\ncommunity: 4"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "experience", "label": "experience", "shape": "dot", "size": 18.730158730158728, "title": "experience\nfreq: 44\ncommunity: 4"}, {"color": "#FF8C94", "font": {"color": "#333333"}, "id": "parents", "label": "parents", "shape": "dot", "size": 18.134920634920633, "title": "parents\nfreq: 41\ncommunity: 6"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "ways", "label": "ways", "shape": "dot", "size": 16.349206349206348, "title": "ways\nfreq: 32\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "family", "label": "family", "shape": "dot", "size": 18.730158730158728, "title": "family\nfreq: 44\ncommunity: 2"}, {"color": "#45B7D1", "font": {"color": "#333333"}, "id": "adulthood", "label": "adulthood", "shape": "dot", "size": 16.547619047619047, "title": "adulthood\nfreq: 33\ncommunity: 4"}, {"color": "#96CEB4", "font": {"color": "#333333"}, "id": "qualitative", "label": "qualitative", "shape": "dot", "size": 17.738095238095237, "title": "qualitative\nfreq: 39\ncommunity: 5"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "understanding", "label": "understanding", "shape": "dot", "size": 17.142857142857142, "title": "understanding\nfreq: 36\ncommunity: 1"}, {"color": "#7B68EE", "font": {"color": "#333333"}, "id": "engagement", "label": "engagement", "shape": "dot", "size": 20.91269841269841, "title": "engagement\nfreq: 55\ncommunity: 0"}, {"color": "#FF6B6B", "font": {"color": "#333333"}, "id": "survey", "label": "survey", "shape": "dot", "size": 17.142857142857142, "title": "survey\nfreq: 36\ncommunity: 1"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "systems", "label": "systems", "shape": "dot", "size": 15.753968253968253, "title": "systems\nfreq: 29\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "change", "label": "change", "shape": "dot", "size": 19.92063492063492, "title": "change\nfreq: 50\ncommunity: 2"}, {"color": "#4ECDC4", "font": {"color": "#333333"}, "id": "identified", "label": "identified", "shape": "dot", "size": 22.1031746031746, "title": "identified\nfreq: 61\ncommunity: 2"}]);
+                  edges = new vis.DataSet([{"from": "activity", "title": "co-occurrence: 55", "to": "physical", "value": 55}, {"from": "activity", "title": "co-occurrence: 18", "to": "health", "value": 18}, {"from": "activity", "title": "co-occurrence: 10", "to": "recommendations", "value": 10}, {"from": "activity", "title": "co-occurrence: 9", "to": "benefits", "value": 9}, {"from": "activity", "title": "co-occurrence: 8", "to": "evidence", "value": 8}, {"from": "physical", "title": "co-occurrence: 24", "to": "health", "value": 24}, {"from": "physical", "title": "co-occurrence: 13", "to": "social", "value": 13}, {"from": "physical", "title": "co-occurrence: 10", "to": "development", "value": 10}, {"from": "physical", "title": "co-occurrence: 10", "to": "evidence", "value": 10}, {"from": "physical", "title": "co-occurrence: 10", "to": "education", "value": 10}, {"from": "physical", "title": "co-occurrence: 9", "to": "benefits", "value": 9}, {"from": "physical", "title": "co-occurrence: 8", "to": "recommendations", "value": 8}, {"from": "health", "title": "co-occurrence: 32", "to": "mental", "value": 32}, {"from": "health", "title": "co-occurrence: 31", "to": "education", "value": 31}, {"from": "health", "title": "co-occurrence: 27", "to": "social", "value": 27}, {"from": "health", "title": "co-occurrence: 24", "to": "school", "value": 24}, {"from": "health", "title": "co-occurrence: 24", "to": "educational", "value": 24}, {"from": "health", "title": "co-occurrence: 24", "to": "adult", "value": 24}, {"from": "health", "title": "co-occurrence: 19", "to": "evidence", "value": 19}, {"from": "health", "title": "co-occurrence: 19", "to": "sexual", "value": 19}, {"from": "health", "title": "co-occurrence: 18", "to": "development", "value": 18}, {"from": "health", "title": "co-occurrence: 17", "to": "promotion", "value": 17}, {"from": "health", "title": "co-occurrence: 16", "to": "interventions", "value": 16}, {"from": "health", "title": "co-occurrence: 14", "to": "life", "value": 14}, {"from": "health", "title": "co-occurrence: 13", "to": "challenges", "value": 13}, {"from": "health", "title": "co-occurrence: 13", "to": "benefits", "value": 13}, {"from": "health", "title": "co-occurrence: 13", "to": "wellbeing", "value": 13}, {"from": "health", "title": "co-occurrence: 12", "to": "digital", "value": 12}, {"from": "health", "title": "co-occurrence: 12", "to": "schools", "value": 12}, {"from": "health", "title": "co-occurrence: 12", "to": "knowledge", "value": 12}, {"from": "health", "title": "co-occurrence: 11", "to": "intervention", "value": 11}, {"from": "health", "title": "co-occurrence: 11", "to": "sex", "value": 11}, {"from": "health", "title": "co-occurrence: 11", "to": "adults", "value": 11}, {"from": "health", "title": "co-occurrence: 10", "to": "quality", "value": 10}, {"from": "health", "title": "co-occurrence: 10", "to": "support", "value": 10}, {"from": "health", "title": "co-occurrence: 10", "to": "media", "value": 10}, {"from": "health", "title": "co-occurrence: 9", "to": "systematic", "value": 9}, {"from": "health", "title": "co-occurrence: 9", "to": "self", "value": 9}, {"from": "health", "title": "co-occurrence: 9", "to": "transition", "value": 9}, {"from": "health", "title": "co-occurrence: 9", "to": "understanding", "value": 9}, {"from": "health", "title": "co-occurrence: 8", "to": "engagement", "value": 8}, {"from": "health", "title": "co-occurrence: 8", "to": "survey", "value": 8}, {"from": "health", "title": "co-occurrence: 8", "to": "aged", "value": 8}, {"from": "health", "title": "co-occurrence: 8", "to": "community", "value": 8}, {"from": "health", "title": "co-occurrence: 8", "to": "approaches", "value": 8}, {"from": "mental", "title": "co-occurrence: 9", "to": "school", "value": 9}, {"from": "education", "title": "co-occurrence: 22", "to": "sex", "value": 22}, {"from": "education", "title": "co-occurrence: 22", "to": "sexuality", "value": 22}, {"from": "education", "title": "co-occurrence: 21", "to": "school", "value": 21}, {"from": "education", "title": "co-occurrence: 19", "to": "sexual", "value": 19}, {"from": "education", "title": "co-occurrence: 18", "to": "employment", "value": 18}, {"from": "education", "title": "co-occurrence: 17", "to": "social", "value": 17}, {"from": "education", "title": "co-occurrence: 17", "to": "adult", "value": 17}, {"from": "education", "title": "co-occurrence: 13", "to": "development", "value": 13}, {"from": "education", "title": "co-occurrence: 13", "to": "experiences", "value": 13}, {"from": "education", "title": "co-occurrence: 12", "to": "training", "value": 12}, {"from": "education", "title": "co-occurrence: 12", "to": "high", "value": 12}, {"from": "education", "title": "co-occurrence: 11", "to": "support", "value": 11}, {"from": "education", "title": "co-occurrence: 10", "to": "schools", "value": 10}, {"from": "education", "title": "co-occurrence: 9", "to": "educational", "value": 9}, {"from": "education", "title": "co-occurrence: 8", "to": "engagement", "value": 8}, {"from": "education", "title": "co-occurrence: 8", "to": "transition", "value": 8}, {"from": "social", "title": "co-occurrence: 23", "to": "media", "value": 23}, {"from": "social", "title": "co-occurrence: 23", "to": "support", "value": 23}, {"from": "social", "title": "co-occurrence: 21", "to": "development", "value": 21}, {"from": "social", "title": "co-occurrence: 19", "to": "school", "value": 19}, {"from": "social", "title": "co-occurrence: 18", "to": "educational", "value": 18}, {"from": "social", "title": "co-occurrence: 16", "to": "life", "value": 16}, {"from": "social", "title": "co-occurrence: 16", "to": "skills", "value": 16}, {"from": "social", "title": "co-occurrence: 13", "to": "emotional", "value": 13}, {"from": "social", "title": "co-occurrence: 12", "to": "academic", "value": 12}, {"from": "social", "title": "co-occurrence: 12", "to": "sport", "value": 12}, {"from": "social", "title": "co-occurrence: 11", "to": "community", "value": 11}, {"from": "social", "title": "co-occurrence: 11", "to": "adult", "value": 11}, {"from": "social", "title": "co-occurrence: 9", "to": "self", "value": 9}, {"from": "social", "title": "co-occurrence: 9", "to": "ways", "value": 9}, {"from": "social", "title": "co-occurrence: 9", "to": "experiences", "value": 9}, {"from": "social", "title": "co-occurrence: 9", "to": "learning", "value": 9}, {"from": "social", "title": "co-occurrence: 9", "to": "family", "value": 9}, {"from": "social", "title": "co-occurrence: 8", "to": "change", "value": 8}, {"from": "social", "title": "co-occurrence: 8", "to": "identified", "value": 8}, {"from": "high", "title": "co-occurrence: 26", "to": "school", "value": 26}, {"from": "school", "title": "co-occurrence: 19", "to": "students", "value": 19}, {"from": "school", "title": "co-occurrence: 15", "to": "support", "value": 15}, {"from": "school", "title": "co-occurrence: 14", "to": "secondary", "value": 14}, {"from": "school", "title": "co-occurrence: 12", "to": "development", "value": 12}, {"from": "school", "title": "co-occurrence: 12", "to": "educational", "value": 12}, {"from": "school", "title": "co-occurrence: 12", "to": "experiences", "value": 12}, {"from": "school", "title": "co-occurrence: 12", "to": "settings", "value": 12}, {"from": "school", "title": "co-occurrence: 11", "to": "adult", "value": 11}, {"from": "school", "title": "co-occurrence: 11", "to": "gender", "value": 11}, {"from": "school", "title": "co-occurrence: 11", "to": "while", "value": 11}, {"from": "school", "title": "co-occurrence: 11", "to": "sexual", "value": 11}, {"from": "school", "title": "co-occurrence: 10", "to": "lgbtq", "value": 10}, {"from": "school", "title": "co-occurrence: 10", "to": "self", "value": 10}, {"from": "school", "title": "co-occurrence: 10", "to": "interventions", "value": 10}, {"from": "school", "title": "co-occurrence: 10", "to": "schools", "value": 10}, {"from": "school", "title": "co-occurrence: 10", "to": "teachers", "value": 10}, {"from": "school", "title": "co-occurrence: 9", "to": "aged", "value": 9}, {"from": "school", "title": "co-occurrence: 9", "to": "experience", "value": 9}, {"from": "school", "title": "co-occurrence: 9", "to": "family", "value": 9}, {"from": "school", "title": "co-occurrence: 8", "to": "employment", "value": 8}, {"from": "school", "title": "co-occurrence: 8", "to": "skills", "value": 8}, {"from": "educational", "title": "co-occurrence: 14", "to": "experiences", "value": 14}, {"from": "educational", "title": "co-occurrence: 11", "to": "adults", "value": 11}, {"from": "educational", "title": "co-occurrence: 9", "to": "family", "value": 9}, {"from": "educational", "title": "co-occurrence: 9", "to": "adulthood", "value": 9}, {"from": "adult", "title": "co-occurrence: 16", "to": "students", "value": 16}, {"from": "adult", "title": "co-occurrence: 14", "to": "adults", "value": 14}, {"from": "adult", "title": "co-occurrence: 11", "to": "care", "value": 11}, {"from": "adult", "title": "co-occurrence: 10", "to": "development", "value": 10}, {"from": "adult", "title": "co-occurrence: 9", "to": "parents", "value": 9}, {"from": "support", "title": "co-occurrence: 9", "to": "development", "value": 9}, {"from": "support", "title": "co-occurrence: 8", "to": "evidence", "value": 8}, {"from": "support", "title": "co-occurrence: 8", "to": "family", "value": 8}, {"from": "support", "title": "co-occurrence: 8", "to": "systems", "value": 8}, {"from": "sex", "title": "co-occurrence: 11", "to": "sexual", "value": 11}, {"from": "development", "title": "co-occurrence: 20", "to": "programs", "value": 20}, {"from": "development", "title": "co-occurrence: 15", "to": "life", "value": 15}, {"from": "development", "title": "co-occurrence: 12", "to": "sport", "value": 12}, {"from": "development", "title": "co-occurrence: 11", "to": "pyd", "value": 11}, {"from": "development", "title": "co-occurrence: 10", "to": "skills", "value": 10}, {"from": "development", "title": "co-occurrence: 9", "to": "community", "value": 9}, {"from": "development", "title": "co-occurrence: 9", "to": "interventions", "value": 9}, {"from": "programs", "title": "co-occurrence: 11", "to": "pyd", "value": 11}, {"from": "training", "title": "co-occurrence: 20", "to": "transition", "value": 20}, {"from": "training", "title": "co-occurrence: 18", "to": "interview", "value": 18}, {"from": "training", "title": "co-occurrence: 14", "to": "strength", "value": 14}, {"from": "training", "title": "co-occurrence: 12", "to": "employment", "value": 12}, {"from": "transition", "title": "co-occurrence: 18", "to": "interview", "value": 18}, {"from": "transition", "title": "co-occurrence: 13", "to": "services", "value": 13}, {"from": "transition", "title": "co-occurrence: 10", "to": "employment", "value": 10}, {"from": "transition", "title": "co-occurrence: 9", "to": "skills", "value": 9}, {"from": "transition", "title": "co-occurrence: 9", "to": "adulthood", "value": 9}, {"from": "transition", "title": "co-occurrence: 9", "to": "care", "value": 9}, {"from": "evidence", "title": "co-occurrence: 9", "to": "interventions", "value": 9}, {"from": "life", "title": "co-occurrence: 17", "to": "skills", "value": 17}, {"from": "life", "title": "co-occurrence: 10", "to": "sport", "value": 10}, {"from": "life", "title": "co-occurrence: 8", "to": "quality", "value": 8}, {"from": "skills", "title": "co-occurrence: 9", "to": "sport", "value": 9}, {"from": "action", "title": "co-occurrence: 15", "to": "participatory", "value": 15}, {"from": "participatory", "title": "co-occurrence: 11", "to": "approaches", "value": 11}, {"from": "adults", "title": "co-occurrence: 15", "to": "services", "value": 15}, {"from": "strength", "title": "co-occurrence: 11", "to": "power", "value": 11}, {"from": "participation", "title": "co-occurrence: 13", "to": "sports", "value": 13}, {"from": "participation", "title": "co-occurrence: 8", "to": "community", "value": 8}, {"from": "participation", "title": "co-occurrence: 8", "to": "sport", "value": 8}, {"from": "focus", "title": "co-occurrence: 10", "to": "interviews", "value": 10}, {"from": "interviews", "title": "co-occurrence: 9", "to": "qualitative", "value": 9}, {"from": "disabilities", "title": "co-occurrence: 10", "to": "learning", "value": 10}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -5000,
+            "springConstant": 0.001,
+            "springLength": 150
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,15 +1,17 @@
 """
-04_cooccurrence_network.py  (v2)
+04_cooccurrence_network.py  (v3)
 =================================
-초록 코퍼스에서 동시출현 네트워크를 구성하고 시각화.
-- 학술 논문 특화 불용어 강화
-- 노드 크기/엣지 굵기 차이를 시각적으로 강조
-- 노드 통계 CSV 출력 (degree 연결 중심성, betweenness 매개 중심성, community, freq)
+Co-occurrence network from academic paper abstracts.
+- Enhanced academic stopwords
+- Node size/edge width visually exaggerated for clarity
+- Node stats CSV with degree_centrality, betweenness_centrality
+- Top degree/betweenness nodes annotated on the figure
+- All output in English
 
-사용법:
+Usage:
     py scripts/04_cooccurrence_network.py --all-fields
     py scripts/04_cooccurrence_network.py --all-fields --by-group
-    py scripts/04_cooccurrence_network.py --input data/raw/pilot_law_child.pkl --by-group
+    py scripts/04_cooccurrence_network.py --input data/raw/pilot_law_child.pkl
 """
 
 import argparse
@@ -28,11 +30,11 @@ import matplotlib.font_manager as fm
 try:
     import networkx as nx
 except ImportError:
-    print("필요: pip install networkx"); exit(1)
+    print("Required: pip install networkx"); exit(1)
 try:
     from community import community_louvain
 except ImportError:
-    print("필요: pip install python-louvain"); exit(1)
+    print("Required: pip install python-louvain"); exit(1)
 try:
     from pyvis.network import Network as PyvisNetwork
     HAS_PYVIS = True
@@ -40,7 +42,7 @@ except ImportError:
     HAS_PYVIS = False
 
 
-# ── 불용어 (강화) ──
+# -- Stopwords (enhanced) --
 
 STOPWORDS = set("""
 the a an and or but in on at to for of is are was were be been being
@@ -114,28 +116,21 @@ def preprocess(text):
 def build_cooccurrence(abstracts, min_count=3, top_n_words=150):
     word_freq = Counter()
     for abstract in abstracts:
-        words = preprocess(abstract)
-        word_freq.update(words)
-
+        word_freq.update(preprocess(abstract))
     top_words = set(w for w, _ in word_freq.most_common(top_n_words))
-
     cooccur = Counter()
     for abstract in abstracts:
-        sentences = re.split(r"[.!?]", abstract)
-        for sent in sentences:
-            words = preprocess(sent)
-            words = list(set(w for w in words if w in top_words))
+        for sent in re.split(r"[.!?]", abstract):
+            words = list(set(w for w in preprocess(sent) if w in top_words))
             for w1, w2 in combinations(sorted(words), 2):
                 cooccur[(w1, w2)] += 1
-
-    cooccur = {pair: count for pair, count in cooccur.items() if count >= min_count}
+    cooccur = {p: c for p, c in cooccur.items() if c >= min_count}
     return cooccur, word_freq
 
 
 def build_network(cooccur, word_freq, max_edges=300):
     G = nx.Graph()
-    sorted_edges = sorted(cooccur.items(), key=lambda x: x[1], reverse=True)[:max_edges]
-    for (w1, w2), weight in sorted_edges:
+    for (w1, w2), weight in sorted(cooccur.items(), key=lambda x: x[1], reverse=True)[:max_edges]:
         G.add_edge(w1, w2, weight=weight)
     for node in G.nodes():
         G.nodes[node]["freq"] = word_freq.get(node, 1)
@@ -145,103 +140,139 @@ def build_network(cooccur, word_freq, max_edges=300):
 
 def detect_communities(G):
     partition = community_louvain.best_partition(G, random_state=42)
-    communities = set(partition.values())
     color_map = {comm: COMMUNITY_COLORS[i % len(COMMUNITY_COLORS)]
-                 for i, comm in enumerate(sorted(communities))}
+                 for i, comm in enumerate(sorted(set(partition.values())))}
     for node in G.nodes():
-        comm = partition[node]
-        G.nodes[node]["community"] = comm
-        G.nodes[node]["color"] = color_map[comm]
+        G.nodes[node]["community"] = partition[node]
+        G.nodes[node]["color"] = color_map[partition[node]]
     return partition, color_map
 
 
 def compute_node_stats(G, partition, word_freq):
-    """노드별 통계 계산 — degree(연결 중심성), betweenness(매개 중심성) 등."""
-    degree_cent = nx.degree_centrality(G)
-    betweenness_cent = nx.betweenness_centrality(G, weight="weight")
-
+    deg = nx.degree_centrality(G)
+    btw = nx.betweenness_centrality(G, weight="weight")
     rows = []
     for node in G.nodes():
         rows.append({
             "node": node,
-            "degree(연결 중심성)": round(degree_cent[node], 4),
+            "degree_centrality": round(deg[node], 4),
             "degree_count": G.degree(node),
-            "betweenness(매개 중심성)": round(betweenness_cent[node], 4),
+            "betweenness_centrality": round(btw[node], 4),
             "community": partition.get(node, -1),
             "community_color": G.nodes[node].get("color", ""),
             "freq": word_freq.get(node, 0),
             "weighted_degree": sum(G[node][nbr]["weight"] for nbr in G.neighbors(node)),
         })
-
-    df = pd.DataFrame(rows)
-    df = df.sort_values("betweenness(매개 중심성)", ascending=False)
-    return df
+    return pd.DataFrame(rows).sort_values("betweenness_centrality", ascending=False)
 
 
-def plot_network_static(G, partition, title, output_path, figsize=(16, 12)):
-    fig, ax = plt.subplots(figsize=figsize)
-    pos = nx.spring_layout(G, k=1.8, iterations=100, seed=42, weight="weight")
+def plot_network_static(G, partition, word_freq, title, output_path, figsize=(18, 13)):
+    fig, axes = plt.subplots(1, 2, figsize=figsize,
+                             gridspec_kw={"width_ratios": [3, 1]})
+    ax = axes[0]
+    ax_table = axes[1]
 
-    # ── 노드 크기: 차이를 과장 (제곱근 스케일 + 넓은 범위) ──
+    pos = nx.spring_layout(G, k=2.0, iterations=120, seed=42, weight="weight")
+
+    # -- Node sizes: sqrt scale, wide range --
     freqs = np.array([G.nodes[n].get("freq", 1) for n in G.nodes()])
-    freq_norm = np.sqrt(freqs / freqs.max())  # 0~1 범위의 제곱근
-    node_sizes = 100 + freq_norm * 4000  # 100 ~ 4100
+    freq_norm = np.sqrt(freqs / max(freqs.max(), 1))
+    node_sizes = 80 + freq_norm * 4500
 
     node_colors = [G.nodes[n].get("color", "#999") for n in G.nodes()]
 
-    # ── 엣지 굵기: 차이를 과장 ──
+    # -- Edge widths: exaggerated --
     weights = np.array([G[u][v]["weight"] for u, v in G.edges()])
     if len(weights) > 0:
-        w_norm = weights / weights.max()
-        edge_widths = 0.2 + w_norm * 6.0  # 0.2 ~ 6.2
-        edge_alphas = 0.08 + w_norm * 0.4  # 0.08 ~ 0.48
+        w_norm = weights / max(weights.max(), 1)
+        edge_widths = 0.15 + w_norm * 7.0
+        edge_alphas = 0.06 + w_norm * 0.45
     else:
-        edge_widths = [1]
-        edge_alphas = [0.2]
+        edge_widths, edge_alphas = [1], [0.2]
 
-    # 엣지를 개별적으로 그려서 alpha를 다르게 적용
+    # Draw edges individually (for per-edge alpha)
     for idx, (u, v) in enumerate(G.edges()):
-        x = [pos[u][0], pos[v][0]]
-        y = [pos[u][1], pos[v][1]]
-        ax.plot(x, y, color="#888888", linewidth=edge_widths[idx],
-                alpha=float(edge_alphas[idx]), zorder=1)
+        ax.plot([pos[u][0], pos[v][0]], [pos[u][1], pos[v][1]],
+                color="#888888", linewidth=edge_widths[idx],
+                alpha=float(edge_alphas[idx]))
 
-    # 노드
+    # Draw nodes
     nx.draw_networkx_nodes(G, pos, ax=ax, node_size=node_sizes,
                            node_color=node_colors, alpha=0.88,
-                           edgecolors="white", linewidths=0.8, zorder=2)
+                           edgecolors="white", linewidths=0.8)
 
-    # 라벨 — 상위 노드만, 크기도 빈도에 비례
+    # Labels: top nodes, font size proportional to freq
     nodes_sorted = sorted(G.nodes(), key=lambda n: G.nodes[n].get("freq", 0), reverse=True)
     label_count = min(50, len(nodes_sorted))
     for i, node in enumerate(nodes_sorted[:label_count]):
         x, y = pos[node]
-        font_size = max(6, min(14, 6 + (freqs[list(G.nodes()).index(node)] / freqs.max()) * 10))
-        font_weight = "bold" if i < 10 else "normal"
-        ax.text(x, y, node, ha="center", va="center",
-                fontsize=font_size, fontweight=font_weight, zorder=3)
+        fs = max(6, min(15, 6 + freq_norm[list(G.nodes()).index(node)] * 11))
+        fw = "bold" if i < 8 else "normal"
+        ax.text(x, y, node, ha="center", va="center", fontsize=fs, fontweight=fw)
 
-    # 범례
+    # Community legend
     comm_nodes = defaultdict(list)
     for node, comm in partition.items():
         comm_nodes[comm].append(node)
-
     legend_handles = []
     for comm in sorted(comm_nodes.keys()):
-        top = sorted(comm_nodes[comm],
-                     key=lambda n: G.nodes[n].get("freq", 0), reverse=True)[:3]
-        label = ", ".join(top)
+        top = sorted(comm_nodes[comm], key=lambda n: G.nodes[n].get("freq", 0), reverse=True)[:3]
         color = G.nodes[top[0]].get("color", "#999")
-        handle = plt.scatter([], [], c=color, s=120, label=f"C{comm}: {label}",
-                             edgecolors="white", linewidths=0.5)
-        legend_handles.append(handle)
-
-    ax.legend(handles=legend_handles, loc="lower left", fontsize=7,
-              framealpha=0.92, title="Communities (top 3 words)",
-              title_fontsize=8)
-
+        legend_handles.append(plt.scatter([], [], c=color, s=120, label=f"C{comm}: {', '.join(top)}",
+                                          edgecolors="white", linewidths=0.5))
+    ax.legend(handles=legend_handles, loc="lower left", fontsize=6.5,
+              framealpha=0.92, title="Communities (top 3 words)", title_fontsize=7)
     ax.set_title(title, fontsize=14, fontweight="bold", pad=15)
     ax.axis("off")
+
+    # -- Right panel: stats table --
+    stats = compute_node_stats(G, partition, word_freq)
+
+    # Top 7 by degree_centrality
+    top_deg = stats.sort_values("degree_centrality", ascending=False).head(7)
+    # Top 7 by betweenness_centrality
+    top_btw = stats.sort_values("betweenness_centrality", ascending=False).head(7)
+
+    ax_table.axis("off")
+    y = 0.95
+
+    ax_table.text(0.0, y, "Top 7 — Degree Centrality", fontsize=10, fontweight="bold",
+                  transform=ax_table.transAxes, va="top")
+    y -= 0.04
+    ax_table.text(0.0, y, f"{'Node':15s} {'Deg':>4s} {'Comm':>5s}",
+                  fontsize=8, fontfamily="monospace", transform=ax_table.transAxes, va="top",
+                  color="#555555")
+    y -= 0.03
+    for _, r in top_deg.iterrows():
+        color = r["community_color"]
+        ax_table.text(0.0, y, f"{r['node']:15s} {r['degree_count']:4d}   C{r['community']}",
+                      fontsize=8.5, fontfamily="monospace", transform=ax_table.transAxes, va="top",
+                      color=color, fontweight="bold")
+        y -= 0.03
+
+    y -= 0.04
+    ax_table.text(0.0, y, "Top 7 — Betweenness Centrality", fontsize=10, fontweight="bold",
+                  transform=ax_table.transAxes, va="top")
+    y -= 0.04
+    ax_table.text(0.0, y, f"{'Node':15s} {'Btw':>7s} {'Comm':>5s}",
+                  fontsize=8, fontfamily="monospace", transform=ax_table.transAxes, va="top",
+                  color="#555555")
+    y -= 0.03
+    for _, r in top_btw.iterrows():
+        color = r["community_color"]
+        ax_table.text(0.0, y, f"{r['node']:15s} {r['betweenness_centrality']:.4f}   C{r['community']}",
+                      fontsize=8.5, fontfamily="monospace", transform=ax_table.transAxes, va="top",
+                      color=color, fontweight="bold")
+        y -= 0.03
+
+    # Summary stats
+    y -= 0.05
+    ax_table.text(0.0, y, f"Nodes: {G.number_of_nodes()}  |  Edges: {G.number_of_edges()}",
+                  fontsize=8, transform=ax_table.transAxes, va="top", color="#888888")
+    y -= 0.03
+    ax_table.text(0.0, y, f"Communities: {len(set(partition.values()))}",
+                  fontsize=8, transform=ax_table.transAxes, va="top", color="#888888")
+
     plt.tight_layout()
     fig.savefig(output_path, dpi=200, bbox_inches="tight", facecolor="white")
     plt.close()
@@ -255,7 +286,6 @@ def export_pyvis(G, title, output_path):
                        font_color="#333333", notebook=False)
     net.heading = title
     net.barnes_hut(gravity=-5000, central_gravity=0.3, spring_length=150)
-
     freqs = {n: G.nodes[n].get("freq", 1) for n in G.nodes()}
     max_freq = max(freqs.values()) if freqs else 1
     for node in G.nodes():
@@ -264,13 +294,14 @@ def export_pyvis(G, title, output_path):
         net.add_node(node, label=node, size=size, color=color,
                      title=f"{node}\nfreq: {freqs[node]}\ncommunity: {G.nodes[node].get('community','?')}")
     for u, v in G.edges():
-        w = G[u][v]["weight"]
-        net.add_edge(u, v, value=w, title=f"co-occurrence: {w}")
+        net.add_edge(u, v, value=G[u][v]["weight"], title=f"co-occurrence: {G[u][v]['weight']}")
     net.save_graph(str(output_path))
     print(f"  HTML: {output_path}")
 
 
 def run_for_field(df, field_name, output_base, by_group=False):
+    tag = field_name[:3]
+
     if not by_group:
         out_fig = output_base / "figures"
         out_html = output_base / "interactive"
@@ -278,7 +309,6 @@ def run_for_field(df, field_name, output_base, by_group=False):
         for d in [out_fig, out_html, out_data]:
             d.mkdir(parents=True, exist_ok=True)
 
-        tag = field_name[:3]
         print(f"\n{'='*50}")
         print(f"Network: {field_name} (all, {len(df)} papers)")
         print(f"{'='*50}")
@@ -287,31 +317,27 @@ def run_for_field(df, field_name, output_base, by_group=False):
         cooccur, word_freq = build_cooccurrence(abstracts, min_count=3, top_n_words=150)
         G = build_network(cooccur, word_freq, max_edges=250)
         partition, _ = detect_communities(G)
-
         print(f"  Nodes: {G.number_of_nodes()}, Edges: {G.number_of_edges()}")
 
         title = f"Co-occurrence: {field_name.upper()} ({len(df)} papers)"
-        plot_network_static(G, partition, title, out_fig / f"{tag}_network_all.png")
+        plot_network_static(G, partition, word_freq, title,
+                            out_fig / f"{tag}_network_all.png")
         export_pyvis(G, title, out_html / f"{tag}_network_all.html")
 
-        # 노드 통계
         stats = compute_node_stats(G, partition, word_freq)
         stats.to_csv(out_data / f"{tag}_node_stats_all.csv", index=False)
-        print(f"  CSV: {out_data / f'{tag}_node_stats_all.csv'}")
 
-        # 엣지 리스트
         edges = [{"source": u, "target": v, "weight": G[u][v]["weight"]}
                  for u, v in G.edges()]
         pd.DataFrame(edges).sort_values("weight", ascending=False).to_csv(
             out_data / f"{tag}_edges_all.csv", index=False)
 
-        # 상위 통계 출력
-        print(f"\n  Top 10 by degree(연결 중심성):")
-        for _, r in stats.sort_values("degree(연결 중심성)", ascending=False).head(10).iterrows():
-            print(f"    {r['node']:20s}  deg={r['degree_count']:3d}  comm=C{r['community']}")
-        print(f"\n  Top 10 by betweenness(매개 중심성):")
-        for _, r in stats.sort_values("betweenness(매개 중심성)", ascending=False).head(10).iterrows():
-            print(f"    {r['node']:20s}  btw={r['betweenness(매개 중심성)']:.4f}  comm=C{r['community']}")
+        print(f"\n  Top 5 Degree Centrality:")
+        for _, r in stats.sort_values("degree_centrality", ascending=False).head(5).iterrows():
+            print(f"    {r['node']:20s}  deg={r['degree_count']:3d}  C{r['community']}")
+        print(f"  Top 5 Betweenness Centrality:")
+        for _, r in stats.sort_values("betweenness_centrality", ascending=False).head(5).iterrows():
+            print(f"    {r['node']:20s}  btw={r['betweenness_centrality']:.4f}  C{r['community']}")
 
     else:
         df = df.copy()
@@ -331,7 +357,6 @@ def run_for_field(df, field_name, output_base, by_group=False):
             for d in [out_fig, out_html, out_data]:
                 d.mkdir(parents=True, exist_ok=True)
 
-            tag = field_name[:3]
             group_slug = group.replace("/", "_")
 
             print(f"\n{'='*50}")
@@ -351,31 +376,28 @@ def run_for_field(df, field_name, output_base, by_group=False):
             print(f"  Nodes: {G.number_of_nodes()}, Edges: {G.number_of_edges()}")
 
             title = f"Co-occurrence: {field_name.upper()} / \"{group}\" ({len(subset)} papers)"
-            plot_network_static(G, partition, title,
-                                out_fig / f"{tag}_network_{group_slug}.png", figsize=(14, 10))
+            plot_network_static(G, partition, word_freq, title,
+                                out_fig / f"{tag}_network_{group_slug}.png",
+                                figsize=(18, 11))
             export_pyvis(G, title, out_html / f"{tag}_network_{group_slug}.html")
 
-            # 노드 통계
             stats = compute_node_stats(G, partition, word_freq)
             stats.to_csv(out_data / f"{tag}_node_stats_{group_slug}.csv", index=False)
-            print(f"  CSV: {out_data / f'{tag}_node_stats_{group_slug}.csv'}")
 
-            # 상위 통계 출력
-            print(f"\n  Top 5 by degree(연결 중심성):")
-            for _, r in stats.sort_values("degree(연결 중심성)", ascending=False).head(5).iterrows():
-                print(f"    {r['node']:20s}  deg={r['degree_count']:3d}  comm=C{r['community']}")
-            print(f"  Top 5 by betweenness(매개 중심성):")
-            for _, r in stats.sort_values("betweenness(매개 중심성)", ascending=False).head(5).iterrows():
-                print(f"    {r['node']:20s}  btw={r['betweenness(매개 중심성)']:.4f}  comm=C{r['community']}")
+            print(f"  Top 5 Degree Centrality:")
+            for _, r in stats.sort_values("degree_centrality", ascending=False).head(5).iterrows():
+                print(f"    {r['node']:20s}  deg={r['degree_count']:3d}  C{r['community']}")
+            print(f"  Top 5 Betweenness Centrality:")
+            for _, r in stats.sort_values("betweenness_centrality", ascending=False).head(5).iterrows():
+                print(f"    {r['node']:20s}  btw={r['betweenness_centrality']:.4f}  C{r['community']}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Co-occurrence network (v2)")
+    parser = argparse.ArgumentParser(description="Co-occurrence network (v3)")
     parser.add_argument("--input", default=None)
     parser.add_argument("--all-fields", action="store_true")
     parser.add_argument("--by-group", action="store_true")
-    parser.add_argument("--output-dir", default="outputs/03_network",
-                        help="Base output dir (default: outputs/03_network)")
+    parser.add_argument("--output-dir", default="outputs/03_network")
     args = parser.parse_args()
 
     setup_font()
@@ -388,14 +410,11 @@ def main():
         pkl_files = sorted(Path("data/raw").glob("pilot_*_child.pkl"))
 
     if not pkl_files:
-        print("No input files found.")
-        return
+        print("No input files found."); return
 
     for pkl_path in pkl_files:
         if not pkl_path.exists():
-            print(f"Not found: {pkl_path}")
             continue
-
         field_name = pkl_path.stem.replace("pilot_", "").replace("_child", "")
         df = pd.read_pickle(pkl_path)
         print(f"\nLoaded {field_name}: {len(df)} papers")
@@ -404,7 +423,6 @@ def main():
             output_base = Path(args.output_dir) / "by_group" / field_name
         else:
             output_base = Path(args.output_dir) / "by_field" / field_name
-
         run_for_field(df, field_name, output_base, by_group=args.by_group)
 
     print(f"\nAll done!")
